@@ -1,0 +1,47 @@
+.markdown-game-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.goal-section,
+.input-section,
+.preview-section {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.goal-section {
+    background-color: #f4f4f4;
+    border-right: 1px solid #ddd;
+}
+
+.input-section {
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-section textarea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    resize: none;
+    background-color: #f0f0f0;
+}
+
+.preview-section {
+    background-color: #f9f9f9;
+    overflow-y: auto;
+}
+
+.markdown-output {
+    padding: 10px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}

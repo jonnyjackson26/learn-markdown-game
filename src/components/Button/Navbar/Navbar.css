@@ -1,0 +1,81 @@
+/* General navbar layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Title styling */
+.navbar-title h1 {
+    font-family: 'Courier New', Courier, monospace; /* "Computery old font" */
+    font-size: 24px;
+    margin: 0;
+}
+
+/* Level dropdown in the center */
+.navbar-level {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar-level label {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.navbar-level select {
+    padding: 5px 10px;
+    font-size: 16px;
+}
+
+/* Links on the right */
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a {
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    color: #007bff; /* Hover color */
+}
+
+/* Theme switcher styling */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switcher label {
+    margin-right: 8px;
+}
+
+#darkModeSwitch {
+    cursor: pointer;
+}
+
+/* Dark Mode Styling */
+body.dark-mode {
+    background-color: #333;
+    color: white;
+}
+
+body.dark-mode .navbar {
+    background-color: #444;
+    border-bottom: 1px solid #666;
+}
+
+body.dark-mode a {
+    color: white;
+}

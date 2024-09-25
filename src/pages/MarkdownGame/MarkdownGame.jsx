@@ -28,7 +28,6 @@ const MarkdownGame = () => {
 
       {/* Input Section */}
       <div className="input-section">
-        <h2>Type Your Markdown</h2>
         <textarea
           value={markdown}
           onChange={handleInputChange}

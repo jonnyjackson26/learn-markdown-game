@@ -1,0 +1,28 @@
+.button-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff; /* Primary blue color */
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.button-link:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.button-link:active {
+    background-color: #004080; /* Even darker when active */
+    transform: translateY(0); /* Reset lift when clicked */
+}
+
+.button-link:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); /* Focus outline */
+}

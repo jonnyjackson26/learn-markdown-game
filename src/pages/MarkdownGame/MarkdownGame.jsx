@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
+import { useTheme } from '../../context/ThemeContext';
 import './MarkdownGame.css';
 
 const MarkdownGame = () => {
+  const { isDarkMode } = useTheme(); // Access the dark mode state
   const [markdown, setMarkdown] = useState('');
 
   const handleInputChange = (event) => {
@@ -10,7 +12,7 @@ const MarkdownGame = () => {
   };
 
   return (
-    <div className="markdown-game-container">
+    <div className={`markdown-game-container ${isDarkMode ? 'dark-mode' : ''}`}>
       {/* Goal Section */}
       <div className="goal-section">
         <h2>Goal</h2>

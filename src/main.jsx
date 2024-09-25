@@ -1,10 +1,9 @@
-import React, { useState, useEffect, useContext } from 'react';
-import ReactDOM from 'react-dom/client'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import Home from './pages/Home/Home';
-import About from './pages/About/About'
-import { createHashRouter, RouterProvider } from 'react-router-dom'
-
-
+import About from './pages/About/About';
+import { createHashRouter, RouterProvider } from 'react-router-dom';
+import { ThemeProvider } from './context/ThemeContext'; // Import the ThemeProvider
 
 const router = createHashRouter([
   {
@@ -15,22 +14,16 @@ const router = createHashRouter([
     path: "/about",
     element: <About />,
   },
-])
-
-
-export const Context = React.createContext();
+]);
 
 function Main() {
-
-
   return (
-    <Context.Provider>
+    <ThemeProvider> {/* Use the ThemeProvider here */}
       <RouterProvider router={router} />
-    </Context.Provider>
-  )
+    </ThemeProvider>
+  );
 }
-
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Main />
-)
+);

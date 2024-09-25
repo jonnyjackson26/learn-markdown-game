@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaSun, FaMoon } from 'react-icons/fa';
+import { useTheme } from '../../../context/ThemeContext'; // Import useTheme hook
 import './Navbar.css';
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode);
-    document.body.classList.toggle('dark-mode', !isDarkMode);
-  };
+  const { isDarkMode, toggleTheme } = useTheme(); // Access theme context
 
   return (
     <nav className="navbar">
-      {/* Left: Title */}
       <div className="navbar-title">
         <h1>learn-markdown-game</h1>
       </div>
 
-      {/* Center: Level Dropdown */}
       <div className="navbar-level">
         <label htmlFor="level">Level:</label>
         <select id="level" name="level">
@@ -26,18 +22,11 @@ const Navbar = () => {
         </select>
       </div>
 
-      {/* Right: Links and Theme Switcher */}
       <div className="navbar-links">
-        <a href="/about">About</a>
-        <a href="/what-is-markdown">What is Markdown?</a>
-        <div className="theme-switcher">
-          <label htmlFor="darkModeSwitch">Day/Night Mode</label>
-          <input
-            type="checkbox"
-            id="darkModeSwitch"
-            onChange={toggleDarkMode}
-            checked={isDarkMode}
-          />
+        <Link to="/about">About</Link>
+        <Link to="/what-is-markdown">What is Markdown?</Link>
+        <div className="theme-switcher" onClick={toggleTheme}>
+          {isDarkMode ? <FaSun className="icon" /> : <FaMoon className="icon" />}
         </div>
       </div>
     </nav>

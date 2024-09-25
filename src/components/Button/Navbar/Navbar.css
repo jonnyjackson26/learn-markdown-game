@@ -4,78 +4,52 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: #f0f0f0;
-    border-bottom: 1px solid #ddd;
+    background-color: var(--navbar-bg); /* Variable based on mode */
+    border-bottom: 1px solid var(--navbar-border);
 }
 
 /* Title styling */
 .navbar-title h1 {
-    font-family: 'Courier New', Courier, monospace; /* "Computery old font" */
+    font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     margin: 0;
+    color: var(--text-color); /* Variable based on mode */
 }
 
 /* Level dropdown in the center */
-.navbar-level {
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .navbar-level label {
-    margin-right: 8px;
-    font-size: 16px;
+    color: var(--text-color);
 }
 
 .navbar-level select {
-    padding: 5px 10px;
-    font-size: 16px;
+    background-color: var(--input-bg);
+    color: var(--text-color);
 }
 
-/* Links on the right */
-.navbar-links {
-    display: flex;
-    align-items: center;
-}
-
+/* Links styling */
 .navbar-links a {
-    margin-right: 20px;
-    text-decoration: none;
-    font-size: 16px;
-    color: #333;
-    transition: color 0.3s ease;
+    color: var(--text-color);
 }
 
-.navbar-links a:hover {
-    color: #007bff; /* Hover color */
-}
-
-/* Theme switcher styling */
+/* Theme switcher (sun/moon icons) */
 .theme-switcher {
-    display: flex;
-    align-items: center;
-}
-
-.theme-switcher label {
-    margin-right: 8px;
-}
-
-#darkModeSwitch {
     cursor: pointer;
+    font-size: 24px;
+    color: var(--text-color);
 }
 
-/* Dark Mode Styling */
+/* Dark Mode Variables */
 body.dark-mode {
-    background-color: #333;
-    color: white;
+    --navbar-bg: #444;
+    --navbar-border: #666;
+    --text-color: white;
+    --input-bg: #333;
 }
 
-body.dark-mode .navbar {
-    background-color: #444;
-    border-bottom: 1px solid #666;
-}
-
-body.dark-mode a {
-    color: white;
+/* Light Mode Variables */
+body:not(.dark-mode) {
+    --navbar-bg: #f0f0f0;
+    --navbar-border: #ddd;
+    --text-color: #333;
+    --input-bg: #fff;
 }

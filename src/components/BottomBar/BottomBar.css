@@ -22,6 +22,14 @@
     border: none;
     border-radius: 5px; /* Rounded corners */
     color: var(--text-color); /* Variable based on mode */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth animation */
+}
+
+/* Valid button state styling */
+.continue-button.valid {
+    background-color: blue; /* Change to blue when valid */
+    color: white; /* Change text color to white for contrast */
+    transform: scale(1.05); /* Slightly enlarge button */
 }
 
 /* Dark Mode Variables */

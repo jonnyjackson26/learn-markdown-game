@@ -29,7 +29,7 @@ body.dark-mode {
 .input-section,
 .preview-section {
     flex: 1;
-    padding: 20px;
+    padding-left: 20px;
     box-sizing: border-box;
     color: var(--text-color);
     overflow-y: auto; /* Allow vertical scrolling */
@@ -46,12 +46,12 @@ body.dark-mode {
     border-right: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
+    padding-top:20px;
 }
 
 .input-section textarea {
     width: 100%;
     height: 100%;
-    padding: 10px;
     font-size: 16px;
     border: none;
     outline: none;
@@ -66,7 +66,6 @@ body.dark-mode {
 }
 
 .markdown-output {
-    padding: 10px;
     white-space: pre-wrap; /* Maintain formatting */
     word-wrap: break-word; /* Allow wrapping */
     color: var(--text-color);

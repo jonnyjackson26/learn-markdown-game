@@ -4,6 +4,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext'; // Import the ThemeProvider
+import { LevelProvider } from './context/LevelContext';
 
 const router = createHashRouter([
   {
@@ -18,8 +19,10 @@ const router = createHashRouter([
 
 function Main() {
   return (
-    <ThemeProvider> {/* Use the ThemeProvider here */}
-      <RouterProvider router={router} />
+    <ThemeProvider>
+      <LevelProvider>    {/** idk if this is best practice , maybe custom hooks might be better */}
+        <RouterProvider router={router} />
+      </LevelProvider>
     </ThemeProvider>
   );
 }

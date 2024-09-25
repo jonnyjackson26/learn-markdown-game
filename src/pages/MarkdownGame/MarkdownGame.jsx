@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+// MarkdownGame.jsx
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import { useTheme } from '../../context/ThemeContext';
+import { useLevel } from '../../context/LevelContext';
+import level_info from '../../assets/level_info';
 import './MarkdownGame.css';
 
-const MarkdownGame = () => {
-  const { isDarkMode } = useTheme(); // Access the dark mode state
-  const [markdown, setMarkdown] = useState('');
+const MarkdownGame = ({ markdown, setMarkdown }) => { // Accept markdown and setMarkdown as props
+  const { isDarkMode } = useTheme(); 
+  const { level } = useLevel(); 
 
   const handleInputChange = (event) => {
     setMarkdown(event.target.value);
@@ -15,9 +18,7 @@ const MarkdownGame = () => {
     <div className={`markdown-game-container ${isDarkMode ? 'dark-mode' : ''}`}>
       {/* Goal Section */}
       <div className="goal-section">
-        <div className="goal-example">
-          <h1>Heading</h1>
-        </div>
+        <ReactMarkdown>{level_info[level].prompt}</ReactMarkdown>
       </div>
 
       {/* Input Section */}
@@ -31,7 +32,6 @@ const MarkdownGame = () => {
 
       {/* Preview Section */}
       <div className="preview-section">
-        <h2>Markdown Preview</h2>
         <div className="markdown-output">
           <ReactMarkdown>{markdown}</ReactMarkdown>
         </div>

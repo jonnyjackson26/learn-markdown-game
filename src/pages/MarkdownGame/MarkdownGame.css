@@ -20,8 +20,9 @@ body.dark-mode {
 
 .markdown-game-container {
     display: flex;
-    height: 100vh;
-    width: 100vw;
+    height: 100%; /* Fill available height */
+    width: 100%; /* Fill available width */
+    overflow: hidden; /* Prevent scrolling */
 }
 
 .goal-section,
@@ -30,7 +31,9 @@ body.dark-mode {
     flex: 1;
     padding: 20px;
     box-sizing: border-box;
-    color: var(--text-color)
+    color: var(--text-color);
+    overflow-y: auto; /* Allow vertical scrolling */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 .goal-section {
@@ -64,7 +67,7 @@ body.dark-mode {
 
 .markdown-output {
     padding: 10px;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+    white-space: pre-wrap; /* Maintain formatting */
+    word-wrap: break-word; /* Allow wrapping */
     color: var(--text-color);
 }

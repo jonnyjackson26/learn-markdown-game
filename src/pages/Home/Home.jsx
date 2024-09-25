@@ -1,18 +1,18 @@
 import React from 'react';
-import './Home.css'
-import Button from '../../components/Button/Button';
+import './Home.css';
 import MarkdownGame from '../MarkdownGame/MarkdownGame';
 import Navbar from '../../components/Button/Navbar/Navbar';
-import  {useTheme} from '../../context/ThemeContext';
+import BottomBar from '../../components/BottomBar/BottomBar';
 
 const Home = () => {
-    const { isDarkMode } = useTheme();
-
     return (
-        <>
+        <div className="home-container">
             <Navbar />
-            <MarkdownGame />
-        </>
+            <div className="markdown-game">
+                <MarkdownGame />
+            </div>
+            <BottomBar />
+        </div>
     );
 };
 

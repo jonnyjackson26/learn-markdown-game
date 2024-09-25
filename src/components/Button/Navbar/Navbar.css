@@ -16,9 +16,15 @@
     color: var(--text-color); /* Variable based on mode */
 }
 
+
 /* Level dropdown in the center */
+.navbar-level {
+    margin: 0 20px; /* Space between dropdown and links */
+}
+
 .navbar-level label {
     color: var(--text-color);
+    margin-right: 5px; /* Small space between label and select */
 }
 
 .navbar-level select {
@@ -27,8 +33,14 @@
 }
 
 /* Links styling */
+.navbar-links {
+    display: flex; /* Make links flex items */
+    align-items: center; /* Center vertically */
+}
+
 .navbar-links a {
     color: var(--text-color);
+    margin-left: 15px; /* Space between links */
 }
 
 /* Theme switcher (sun/moon icons) */
@@ -36,6 +48,7 @@
     cursor: pointer;
     font-size: 24px;
     color: var(--text-color);
+    margin-left: 15px; /* Space between last link and theme icon */
 }
 
 /* Dark Mode Variables */

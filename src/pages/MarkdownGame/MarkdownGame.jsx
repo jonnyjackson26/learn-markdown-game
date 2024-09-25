@@ -15,16 +15,8 @@ const MarkdownGame = () => {
     <div className={`markdown-game-container ${isDarkMode ? 'dark-mode' : ''}`}>
       {/* Goal Section */}
       <div className="goal-section">
-        <h2>Goal</h2>
-        <p>Here’s an example of Markdown you should recreate:</p>
         <div className="goal-example">
-          <h1>This is a heading</h1>
-          <p>This is a paragraph.</p>
-          <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-          </ul>
+          <h1>Heading</h1>
         </div>
       </div>
 

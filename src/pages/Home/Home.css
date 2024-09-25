@@ -1,0 +1,27 @@
+/* Ensure the body and html take up the full height */
+html, body {
+    height: 100%;
+    margin: 0; /* Remove default margin */
+}
+
+/* Home component styles */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+}
+
+/* Navbar and BottomBar should take their content size */
+.navbar {
+    flex: 0 0 auto; /* Prevent growth, maintain content size */
+}
+
+.bottom-bar {
+    flex: 0 0 auto; /* Prevent growth, maintain content size */
+}
+
+/* MarkdownGame should take the remaining space */
+.markdown-game {
+    flex: 1; /* Allow it to grow and fill the remaining space */
+    overflow-y: auto; /* Enable scrolling only for the MarkdownGame if necessary */
+}

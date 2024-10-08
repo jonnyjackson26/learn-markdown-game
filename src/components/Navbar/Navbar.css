@@ -16,6 +16,15 @@
     color: var(--text-color); /* Variable based on mode */
 }
 
+/* Link styling */
+.navbar-title h1 a {
+    color: inherit; /* Use the same color as the h1 */
+    text-decoration: none; /* Remove underline */
+}
+.navbar-title h1 a:hover {
+    color: #666;
+}
+
 
 /* Level dropdown in the center */
 .navbar-level {

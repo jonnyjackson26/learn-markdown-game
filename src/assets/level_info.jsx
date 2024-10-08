@@ -51,33 +51,25 @@ Create two headings, each followed by a paragraph.`,
         level: 5,
         name: "Italics",
         prompt: "*Italics*",
-        message: `To italicize text, use asterisks or underscores:
-
-\`*italic*\` or \`_italic_\``,
+        message: ``,
     },
     {
         level: 6,
         name: "Bold",
         prompt: "**Bold**",
-        message: `For bold text, use double asterisks or underscores:
-
-\`**bold**\` or \`__bold__\``,
+        message: ``,
     },
     {
         level: 7,
         name: "Bold and Italics",
         prompt: "***Bold and Italics***",
-        message: `Combine bold and italics using triple asterisks or underscores:
-
-\`***bold and italic***\` or \`___bold and italic___\``,
+        message: ``,
     },
     {
         level: 8,
         name: "Inline Code",
         prompt: "`Inline Code`",
-        message: `Use backticks to create inline code snippets:
-
-\`\` \`code\` \`\``,
+        message: ``,
     },
     {
         level: 9,

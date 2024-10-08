@@ -1,7 +1,7 @@
 import React from 'react';
 import './About.css';
 import Button from '../../components/Button/Button';
-import Navbar from '../../components/Button/Navbar/Navbar';
+import Navbar from '../../components/Navbar/Navbar';
 
 const About = () => {
     return (

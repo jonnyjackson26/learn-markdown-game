@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaSun, FaMoon } from 'react-icons/fa';
-import { useTheme } from '../../../context/ThemeContext'; // Import useTheme hook
-import { useLevel } from '../../../context/LevelContext'; // Import useLevel hook
-import level_info from '../../../assets/level_info';
+import { useTheme } from '../../context/ThemeContext';
+import { useLevel } from '../../context/LevelContext';
+import level_info from '../../assets/level_info';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar-title">
-        <h1>learn-markdown-game</h1>
+        <h1><Link to="/">learn-markdown-game</Link></h1>
       </div>
 
       <div className="navbar-level">

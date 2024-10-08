@@ -23,6 +23,7 @@ body.dark-mode {
     height: 100%; /* Fill available height */
     width: 100%; /* Fill available width */
     overflow: hidden; /* Prevent scrolling */
+    border:1px solid var(--border-color);
 }
 
 .markdown-output,

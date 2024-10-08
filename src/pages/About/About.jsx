@@ -22,10 +22,13 @@ const About = () => {
                 <p>
                     This game teaches you the github flavor of markdown.
                 </p>
-                {/*<p>
-                    Check out our <a href="/cheat-sheet" target="_blank" rel="noopener noreferrer">Markdown Cheat-Sheet</a> for a quick reference guide.
+                <p>
+                    Check out our <a href="/#/cheat-sheet" target="_blank" rel="noopener noreferrer">Markdown Cheat-Sheet</a> for a quick reference guide.
                 </p>
                 <p>
+                    To test your markdown, use our <a href="/#/live-editor" target="_blank" rel="noopener noreferrer">Live Editor</a>.
+                </p>
+                {/*<p>
                     Watch our <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" rel="noopener noreferrer">
                     Markdown Tutorial Video</a> on YouTube to get started!
                 </p>*/}

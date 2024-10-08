@@ -4,24 +4,20 @@ const level_info = [
         name: "Normal Text",
         prompt: "Normal Text",
         message: `Welcome to the \`learn-markdown-game\`! Markdown is commonly used in \`README.md\`, Jupyter notebooks, and various other places.
-        
-Let's start learning Markdown with some basic formatting.
 
 In this example, you'll learn the easiest thing in Markdown: **normal text**.
 
-You need to recreate on the right panel what is shown on the left. You do this by typing in the middle panel.`,
+![Normal Text Gif](normal_text_gif.gif)`,
     },
     {
         level: 1,
         name: "Heading 1",
         prompt: "# Heading 1",
         message: `Let's begin by creating a heading:
-
-# large heading
-
+        
 To do this, use a \`#\` followed by a space for Heading 1.
 
-Example: \n\`# Heading 1\``,
+![Heading 1 Gif](heading1_gif.gif)`,
     },
     {
         level: 2,
@@ -31,6 +27,8 @@ Example: \n\`# Heading 1\``,
 
 Create a heading for each level.
 
+![Other Headings Gif](other_headings_gif.gif)
+
 \`\`\`hint
 Hint: You can copy the text from the left panel and paste it into the middle if you don't want to type out each heading.
 \`\`\``,
@@ -39,9 +37,7 @@ Hint: You can copy the text from the left panel and paste it into the middle if 
         level: 3,
         name: "Horizontal Rule",
         prompt: "---",
-        message: `Create horizontal rules using three or more dashes, asterisks, or underscores:
-
-\`---\` or \`***\` or \`___\``,
+        message: ``,
     },
     {
         level: 4,

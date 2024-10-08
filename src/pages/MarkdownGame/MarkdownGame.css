@@ -71,3 +71,13 @@ body.dark-mode {
     color: var(--text-color);
 }
 
+/* Reset any browser default styles; without this theres too much padding between things */
+.markdown-output * {
+    margin: 0;
+    margin-top:20px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+

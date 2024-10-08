@@ -53,3 +53,7 @@ body:not(.dark-mode) {
     --text-color: #333;
     --input-bg: #fff;
 }
+
+img {
+    width:500px;
+}

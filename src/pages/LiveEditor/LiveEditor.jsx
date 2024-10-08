@@ -7,7 +7,8 @@ const LiveEditor = () => {
     return (
         <>
             <Navbar /> 
-            <Editor prompt="# Welcome to the Live Markdown Editor!
+            <div class="live-editor-container">
+                <Editor class="editor" prompt="# Welcome to the Live Markdown Editor!
 
 This is a **live editor** for markdown code. It supports **GitHub-flavored markdown** (GFM), meaning you can use features like strikethroughs, tables, task lists, and more.
 
@@ -17,7 +18,7 @@ Or check out the **Markdown Tutorial** at [learn-markdown-game.com](https://lear
 
 Start typing your markdown on the left and see the output rendered in real-time on the right!
 "/>
-            
+          </div>  
         </>
     );
 };

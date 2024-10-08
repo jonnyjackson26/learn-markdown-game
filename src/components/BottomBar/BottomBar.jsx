@@ -5,7 +5,7 @@ import { useLevel } from '../../context/LevelContext';
 import level_info from '../../assets/level_info';
 import './BottomBar.css'; // Import CSS for styling
 
-const BottomBar = ( {markdown}) => {
+const BottomBar = ( {markdown, setMarkdown}) => {
   const { isDarkMode } = useTheme(); // Access theme context
   const { level, setLevel } = useLevel(); // Access level context
 
@@ -15,6 +15,7 @@ const BottomBar = ( {markdown}) => {
 
   const handleContinue = () => {
     setLevel((prevLevel) => prevLevel + 1);
+    setMarkdown('');
   };
 
   return (

@@ -14,7 +14,7 @@ const Home = () => {
             <div className="markdown-game">
                 <MarkdownGame markdown={markdown} setMarkdown={setMarkdown} /> {/* Pass state and setter */}
             </div>
-            <BottomBar markdown={markdown} /> {/* Pass markdown to BottomBar */}
+            <BottomBar markdown={markdown} setMarkdown={setMarkdown} /> {/* Pass markdown to BottomBar */}
         </div>
     );
 };

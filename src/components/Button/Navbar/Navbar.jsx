@@ -36,7 +36,7 @@ const Navbar = () => {
 
       <div className="navbar-links">
         <Link to="/about">About</Link>
-        <Link to="/what-is-markdown">What is Markdown?</Link>
+        {/*<Link to="/what-is-markdown">What is Markdown?</Link>*/}
         <div className="theme-switcher" onClick={toggleTheme}>
           {isDarkMode ? <FaSun className="icon" /> : <FaMoon className="icon" />}
         </div>

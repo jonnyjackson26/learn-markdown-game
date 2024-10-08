@@ -1,6 +1,7 @@
 // MarkdownGame.jsx
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm'; // Import remark-gfm
 import { useTheme } from '../../context/ThemeContext';
 import { useLevel } from '../../context/LevelContext';
 import level_info from '../../assets/level_info';
@@ -18,7 +19,7 @@ const MarkdownGame = ({ markdown, setMarkdown }) => { // Accept markdown and set
     <div className={`markdown-game-container ${isDarkMode ? 'dark-mode' : ''}`}>
       {/* Goal Section */}
       <div className="goal-section">
-        <ReactMarkdown>{level_info[level].prompt}</ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{level_info[level].prompt}</ReactMarkdown>
       </div>
 
       {/* Input Section */}
@@ -33,7 +34,7 @@ const MarkdownGame = ({ markdown, setMarkdown }) => { // Accept markdown and set
       {/* Preview Section */}
       <div className="preview-section">
         <div className="markdown-output">
-          <ReactMarkdown>{markdown}</ReactMarkdown>
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{markdown}</ReactMarkdown>
         </div>
       </div>
     </div>

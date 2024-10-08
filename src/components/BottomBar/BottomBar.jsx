@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown component
 import { useTheme } from '../../context/ThemeContext'; 
 import { useLevel } from '../../context/LevelContext';
 import level_info from '../../assets/level_info';
-import {isValidMarkdown} from '../../assets/isValidMarkdown';
+import isValidMarkdown from '../../assets/isValidMarkdown';
 import './BottomBar.css'; // Import CSS for styling
 
 const BottomBar = ( {markdown, setMarkdown}) => {

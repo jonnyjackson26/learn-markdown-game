@@ -94,10 +94,10 @@ Your code here
         message: `Tables are created using pipes (\`|\`) and dashes (\`-\`).
 
 \`\`\`
-| Header | Header |
-|--------|--------|
-| Row 1  | Data 1 |
-| Row 2  | Data 2 |
+| Header 1 | Header 2 |
+|---------|---------|
+| Row 1   | Data 1  |
+| Row 2   | Data 2  |
 \`\`\``,
     },
     {
@@ -156,6 +156,24 @@ You can make the Link point anywhere you want, but may I suggest \`learn-markdow
         name: "Checkpoint: Blockquote, Images, and Links",
         prompt: `> Blockquote\n\n![Image](catjpg)\n\n[Link Text](https://learn-markdown-game.com)`,
         message: `**Checkpoint**: Combine blockquotes, images, and links in a single document.`,
+    },
+    {
+        level: 19,
+        name: "Strikethrough",
+        prompt: "~~strikethrough~~",
+        message: "Strikethrough this text using double tildes."
+    },
+    {
+        level: 20,
+        name: "Task List",
+        prompt: "- [x] Task 1\n- [ ] Task 2\n- [ ] Task 3",
+        message: "Create a task list with one completed task and two pending tasks."
+    },
+    {
+        level: 21,
+        name: "Nested Lists",
+        prompt: "- Item 1\n  - Subitem 1\n  - Subitem 2\n- Item 2",
+        message: "Create a nested list with subitems."
     },
 ];
 

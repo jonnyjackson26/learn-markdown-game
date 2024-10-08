@@ -9,7 +9,7 @@ make vertical alginment centered in navbar
 add about page and what is markdown page and cheat sheet and live editor
 make the markdowngame 3 components horziontally resizable
 accesibility. sjhould be able to press enter and go to next level
-make logo clickable to go home
 ignore case and split the input to match output
+- can add levels where it gives you certain input and you need to stylize. like use the starter that i orignally had.
 
 make certificate

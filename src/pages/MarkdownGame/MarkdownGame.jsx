@@ -14,10 +14,6 @@ const MarkdownGame = ({ markdown, setMarkdown }) => { // Accept markdown and set
     setMarkdown(event.target.value);
   };
 
-  const handleTextareaFocus = () => {
-    setMarkdown(level_info[level].starter); 
-  };
-
   return (
     <div className={`markdown-game-container ${isDarkMode ? 'dark-mode' : ''}`}>
       {/* Goal Section */}
@@ -30,7 +26,6 @@ const MarkdownGame = ({ markdown, setMarkdown }) => { // Accept markdown and set
         <textarea
           value={markdown}
           onChange={handleInputChange}
-          //onFocus={handleTextareaFocus}
           placeholder="Type your markdown here..."
         />
       </div>

@@ -3,15 +3,12 @@ import ReactMarkdown from 'react-markdown'; // Import ReactMarkdown component
 import { useTheme } from '../../context/ThemeContext'; 
 import { useLevel } from '../../context/LevelContext';
 import level_info from '../../assets/level_info';
+import isValidMarkdown from '../../assets/isValidMarkdown';
 import './BottomBar.css'; // Import CSS for styling
 
 const BottomBar = ( {markdown, setMarkdown}) => {
   const { isDarkMode } = useTheme(); // Access theme context
   const { level, setLevel } = useLevel(); // Access level context
-
-  const isValidMarkdown = () => {
-    return markdown.trim() === level_info[level].prompt.trim();
-  };
 
   const handleContinue = () => {
     setLevel((prevLevel) => prevLevel + 1);
@@ -23,7 +20,9 @@ const BottomBar = ( {markdown, setMarkdown}) => {
       <div className="welcome-message">
         <ReactMarkdown>{level_info[level].message}</ReactMarkdown>
       </div>
-      <button className={`continue-button ${isValidMarkdown() ? 'valid' : ''}`} disabled={!isValidMarkdown()} onClick={handleContinue}>
+      <button className={`continue-button ${isValidMarkdown(markdown, level_info, level) ? 'valid' : ''}`} 
+        disabled={!isValidMarkdown(markdown, level_info, level)} 
+        onClick={handleContinue}>
         Continue
       </button>
     </div>

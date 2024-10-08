@@ -5,6 +5,8 @@ import About from './pages/About/About';
 import { createHashRouter, RouterProvider } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext'; // Import the ThemeProvider
 import { LevelProvider } from './context/LevelContext';
+import CheatSheet from './pages/CheatSheet/CheatSheet';
+import LiveEditor from './pages/LiveEditor/LiveEditor';
 
 const router = createHashRouter([
   {
@@ -14,6 +16,14 @@ const router = createHashRouter([
   {
     path: "/about",
     element: <About />,
+  },
+  {
+    path: "/cheat-sheet",
+    element: <CheatSheet />,
+  },
+  {
+    path: "/live-editor",
+    element: <LiveEditor />,
   },
 ]);
 

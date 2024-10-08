@@ -1,0 +1,77 @@
+/* Default light mode variables */
+:root {
+    --goal-bg: #f4f4f4;
+    --input-bg: #fff;
+    --preview-bg: #f9f9f9;
+    --border-color: #ddd;
+    --text-color: #333;
+    --code-background-color: #eef;
+    --font-family: 'Roboto', sans-serif; /* Default font */
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --goal-bg: #333;
+    --input-bg: #444;
+    --preview-bg: #555;
+    --border-color: #666;
+    --text-color: #fff;
+    --code-background-color:rgb(105, 105, 110);
+    --font-family: 'Roboto', sans-serif; /* Default font */
+}
+
+.cheat-sheet {
+    padding: 20px;
+    font-family: var(--font-family); /* Apply font family */
+}
+
+.markdown-section {
+    background-color: var(--goal-bg); /* Use the variable for preview background */
+    border: 1px solid var(--border-color); /* Use variable for border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside each section */
+    margin: 20px 0; /* Space between sections */
+}
+
+h2 {
+    color: var(--text-color); /* Use the variable for text color */
+    font-family: 'Montserrat', sans-serif; /* Different font for headings */
+}
+
+p {
+    line-height: 1.5; /* Improve readability */
+}
+
+code {
+    background-color: var(--code-background-color) ; /* Light background for code */
+    padding: 2px 4px; /* Padding for code */
+    border-radius: 4px; /* Rounded corners for code */
+}
+
+
+/* table of cpontents*/
+.table-of-contents {
+    margin: 20px 0; /* Spacing above and below the ToC */
+    font-family: var(--font-family); /* Use the same font as the rest of the page */
+}
+
+.toc-grid {
+    display: grid; /* Enable grid layout */
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Create responsive grid items */
+    gap: 15px; /* Space between grid items */
+}
+
+.toc-grid a {
+    text-decoration: none; /* Remove the default underline */
+    color: var(--text-color); /* Use the text color variable */
+    background-color: var(--goal-bg); /* Use the background color variable */
+    padding: 10px; /* Add padding */
+    border: 1px solid var(--border-color); /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s; /* Smooth background color transition */
+}
+
+.toc-grid a:hover {
+    background-color: var(--border-color); /* Change background color on hover */
+    color: var(--goal-bg); /* Change text color on hover for contrast */
+}

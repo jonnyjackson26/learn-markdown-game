@@ -7,7 +7,7 @@ const level_info = [
 
 In this example, you'll learn the easiest thing in Markdown: **normal text**.
 
-![Normal Text Gif](normal_text_gif.gif)`,
+![Normal Text Gif](gifs/normal_text.gif)`,
     },
     {
         level: 1,
@@ -17,7 +17,7 @@ In this example, you'll learn the easiest thing in Markdown: **normal text**.
         
 To do this, use a \`#\` followed by a space for Heading 1.
 
-![Heading 1 Gif](heading1_gif.gif)`,
+![Heading 1 Gif](gifs/heading1.gif)`,
     },
     {
         level: 2,
@@ -27,7 +27,7 @@ To do this, use a \`#\` followed by a space for Heading 1.
 
 Create a heading for each level.
 
-![Other Headings Gif](other_headings_gif.gif)
+![Other Headings Gif](gifs/other_headings.gif)
 
 \`\`\`hint
 Hint: You can copy the text from the left panel and paste it into the middle if you don't want to type out each heading.
@@ -37,7 +37,9 @@ Hint: You can copy the text from the left panel and paste it into the middle if 
         level: 3,
         name: "Horizontal Rule",
         prompt: "---",
-        message: ``,
+        message: `
+        
+![Horizontal Rule Gif](gifs/hr.gif)`,
     },
     {
         level: 4,
@@ -51,19 +53,28 @@ Create two headings, each followed by a paragraph.`,
         level: 5,
         name: "Italics",
         prompt: "*Italics*",
-        message: ``,
+        message: `
+        
+        
+![Italics Gif](gifs/italics.gif)`,
     },
     {
         level: 6,
         name: "Bold",
         prompt: "**Bold**",
-        message: ``,
+        message: `
+        
+        
+![Bold Gif](gifs/bold.gif)`,
     },
     {
         level: 7,
         name: "Bold and Italics",
         prompt: "***Bold and Italics***",
-        message: ``,
+        message: `
+        
+        
+![Bold and Italics Gif](gifs/bold_and_italics.gif)`,
     },
     {
         level: 8,

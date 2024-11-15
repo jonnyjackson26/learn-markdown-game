@@ -39,6 +39,7 @@ body.dark-mode {
 .goal-section {
     background-color: var(--goal-bg);
     border-right: 1px solid var(--border-color);
+    padding-right:10px; /* This is especially for <hr> which run to the right end of their container*/
 }
 
 .input-section {

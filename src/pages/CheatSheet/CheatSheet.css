@@ -33,12 +33,12 @@ body.dark-mode {
     margin: 20px 0; /* Space between sections */
 }
 
-h2 {
+.subheadings {
     color: var(--text-color); /* Use the variable for text color */
     font-family: 'Montserrat', sans-serif; /* Different font for headings */
 }
 
-p {
+p  {
     line-height: 1.5; /* Improve readability */
 }
 

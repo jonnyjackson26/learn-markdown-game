@@ -28,7 +28,7 @@ const CheatSheet = () => {
                     <p>This is intended as a quick reference and showcase. For more complete info, see the <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">GitHub-flavored Markdown info page.</a></p>
 
                     <div className="table-of-contents">
-                        <h2>Table of Contents</h2>
+                        <h2 class="subheadings">Table of Contents</h2>
                         <div className="toc-grid">
                             <Link to="#headings">Headings</Link>
                             <Link to="#emphasis">Emphasized Text</Link>
@@ -48,7 +48,7 @@ const CheatSheet = () => {
 
                     {/* Headings */}
                     <section id="headings" className="markdown-section">
-                        <h2>Headings</h2>
+                        <h2 class="subheadings">Headings</h2>
                         <p>Headers can be created with <code>#</code> followed by a <code>space</code> for different levels:</p>
                         <Editor prompt={`# H1\n## H2\n### H3\n#### H4\n##### H5\n###### H6`} />
                         <p>Alternatively, for H1 and H2, you can use an underline style:</p>
@@ -58,7 +58,7 @@ const CheatSheet = () => {
 
                     {/* Emphasis */}
                     <section id="emphasis" className="markdown-section">
-                        <h2>Emphasized Text</h2>
+                        <h2 class="subheadings">Emphasized Text</h2>
                         <p>Italicize text using <code>*</code> or <code>_</code>:</p>
                         <Editor prompt={`*italic* or _italic_`} />
                         <p>To create bold text, use <code>**</code> or <code>__</code>:</p>
@@ -70,7 +70,7 @@ const CheatSheet = () => {
 
                     {/* Lists */}
                     <section id="lists" className="markdown-section">
-                        <h2>Lists</h2>
+                        <h2 class="subheadings">Lists</h2>
                         <p>Create unordered lists using <code>-</code>, <code>*</code>, or <code>+</code>:</p>
                         <Editor prompt={`- First item\n- Second item\n- Third item`} />
                         <Editor prompt={`* First item\n* Second item\n* Third item`} />
@@ -84,7 +84,7 @@ const CheatSheet = () => {
 
                     {/* Task Lists */}
                     <section id="task-lists" className="markdown-section">
-                        <h2>Task Lists</h2>
+                        <h2 class="subheadings">Task Lists</h2>
                         <p>Create task lists using <code>- [ ]</code> for unchecked and <code>- [x]</code> for checked:</p>
                         <Editor prompt={`- [x] Task 1\n- [ ] Task 2`} />
                         <p>Task lists are a great way to keep track of items or steps in a process. They are especially useful for checklists, to-do lists, or tracking progress on projects. The checkboxes are not interactive but are great for display.</p>
@@ -92,7 +92,7 @@ const CheatSheet = () => {
 
                     {/* Links */}
                     <section id="links" className="markdown-section">
-                        <h2>Links</h2>
+                        <h2 class="subheadings">Links</h2>
                         <p>Create links using the following syntax:</p>
                         <Editor prompt={`[I'm a link](https://www.learn-markdown-game.com)`} />
                         <p>Or use reference-style links:</p>
@@ -105,7 +105,7 @@ const CheatSheet = () => {
 
                     {/* Images */}
                     <section id="images" className="markdown-section">
-                        <h2>Images</h2>
+                        <h2 class="subheadings">Images</h2>
                         <p>Images can be added similarly to links, with an exclamation point:</p>
                         
                         <h3>Basic Image Syntax</h3>
@@ -120,7 +120,7 @@ const CheatSheet = () => {
 
                     {/* Code */}
                     <section id="code" className="markdown-section">
-                        <h2>Code and Syntax Highlighting</h2>
+                        <h2 class="subheadings">Code and Syntax Highlighting</h2>
                         
                         <p>In Markdown, you can include code snippets in two primary ways: inline code and code blocks.</p>
                         
@@ -141,7 +141,7 @@ const CheatSheet = () => {
 
                     {/* Footnotes */}
                     <section id="footnotes" className="markdown-section">
-                        <h2>Footnotes</h2>
+                        <h2 class="subheadings">Footnotes</h2>
                         <p>Footnotes are a great way to provide additional information without cluttering the main text. You can add footnotes using the following syntax:</p>
                         <Editor prompt={`Here is a footnote reference[^1].\n\n[^1]: This is the footnote itself.`} />
                         
@@ -152,7 +152,7 @@ const CheatSheet = () => {
 
                     {/* Tables */}
                     <section id="tables" className="markdown-section">
-                        <h2>Tables</h2>
+                        <h2 class="subheadings">Tables</h2>
                         <p>To create tables in Markdown, use pipes (<code>|</code>) to separate columns and dashes (<code>-</code>) to create headers:</p>
                         <Editor prompt={`| Syntax      | Description |\n| ----------- | ----------- |\n| Header      | Title       |\n| Paragraph   | Text        |`} />
                         
@@ -164,7 +164,7 @@ const CheatSheet = () => {
 
                     {/* Blockquotes */}
                     <section id="blockquotes" className="markdown-section">
-                        <h2>Blockquotes</h2>
+                        <h2 class="subheadings">Blockquotes</h2>
                         <p>Blockquotes are created by starting a line with the greater-than symbol (<code>&gt;</code>):</p>
                         <Editor prompt={`> This is a blockquote.`} />
                         
@@ -175,7 +175,7 @@ const CheatSheet = () => {
 
                     {/* Inline HTML */}
                     <section id="inline-html" className="markdown-section">
-                        <h2>Inline HTML</h2>
+                        <h2 class="subheadings">Inline HTML</h2>
                         <p>HTML can be used inside Markdown to enhance formatting:</p>
                         <Editor prompt={`<strong>This is bold using HTML</strong>`} />
                         
@@ -186,7 +186,7 @@ const CheatSheet = () => {
 
                     {/* Horizontal Rule */}
                     <section id="horizontal-rule" className="markdown-section">
-                        <h2>Horizontal Rule</h2>
+                        <h2 class="subheadings">Horizontal Rule</h2>
                         <p>Create horizontal rules to visually separate sections of your content. You can use three or more dashes (<code>---</code>), underscores (<code>___</code>), or asterisks (<code>***</code>):</p>
                         <Editor prompt={`---`} />
                         <Editor prompt={`___`} />
@@ -198,7 +198,7 @@ const CheatSheet = () => {
 
                     {/* YouTube Videos */}
                     <section id="youtube-videos" className="markdown-section">
-                        <h2>YouTube Videos</h2>
+                        <h2 class="subheadings">YouTube Videos</h2>
                         <p>To include a YouTube video in your Markdown document, you can use an image with a link to the video:</p>
                         <Editor prompt={`[![Video Title](http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](http://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)`} />
                         

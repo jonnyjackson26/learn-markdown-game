@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: var(--navbar-bg); /* Variable based on mode */
+    background-color: var(--navbar-bg);
     border-bottom: 1px solid var(--navbar-border);
 }
 
@@ -13,7 +13,7 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 24px;
     margin: 0;
-    color: var(--text-color); /* Variable based on mode */
+    color: var(--text-color);
 }
 
 /* Link styling */
@@ -24,7 +24,6 @@
 .navbar-title h1 a:hover {
     color: #666;
 }
-
 
 /* Level dropdown in the center */
 .navbar-level {
@@ -43,35 +42,68 @@
 
 /* Links styling */
 .navbar-links {
-    display: flex; /* Make links flex items */
-    align-items: center; /* Center vertically */
+    display: flex;
+    align-items: center;
 }
 
 .navbar-links a {
     color: var(--text-color);
     margin-left: 15px; /* Space between links */
+    text-decoration: none;
 }
 
-/* Theme switcher (sun/moon icons) */
-.theme-switcher {
+/* Hide mobile navbar by default */
+.navbar-links.mobile {
+    display: none;
+}
+
+/* Desktop links */
+.navbar-links.desktop {
+    display: flex;
+}
+
+/* Mobile menu toggle (Hamburger icon) */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background: transparent;
+    border: none;
     cursor: pointer;
-    font-size: 24px;
-    color: var(--text-color);
-    margin-left: 15px; /* Space between last link and theme icon */
 }
 
-/* Dark Mode Variables */
-body.dark-mode {
-    --navbar-bg: #444;
-    --navbar-border: #666;
-    --text-color: white;
-    --input-bg: #333;
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color);
+    border-radius: 5px;
 }
 
-/* Light Mode Variables */
-body:not(.dark-mode) {
-    --navbar-bg: #f0f0f0;
-    --navbar-border: #ddd;
-    --text-color: #333;
-    --input-bg: #fff;
+/* Mobile view styles (for screens smaller than 768px) */
+@media (max-width: 768px) {
+    .navbar-links.desktop {
+        display: none; /* Hide the desktop links on mobile */
+    }
+
+    .navbar-links.mobile.active {
+        display: flex; /* Show mobile links when active */
+        flex-direction: column;
+        width: 100%;
+        background-color: var(--navbar-bg);
+        position: absolute;
+        top: 50px;
+        left: 0;
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+
+    .navbar-title h1 {
+        font-size: 20px; /* Smaller logo text on mobile */
+    }
 }

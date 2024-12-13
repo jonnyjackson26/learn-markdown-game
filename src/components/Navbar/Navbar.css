@@ -10,12 +10,12 @@
 .navbar-title {
   font-size: 24px;
   color: var(--accent-color);
-  text-decoration: none; /* Ensures the link does not have an underline */
+  text-decoration: none;
   font-family: monospace;
 }
 
 .navbar-title:hover {
-  color: var(--highlight-color); /* Change to any color you want on hover */
+  color: var(--highlight-color);
 }
 
 .navbar-right {
@@ -49,7 +49,7 @@
 
 /* Mobile Dropdown Menu */
 .navbar-dropdown {
-  display: none; /* Hide the dropdown by default */
+  display: none;
   flex-direction: column;
   position: absolute;
   top: 60px;
@@ -84,13 +84,10 @@
   .navbar-dropdown.open {
     display: flex; /* Show the dropdown when it's open */
   }
-}
 
-
-/* Responsive Styles for Mobile */
-@media (max-width: 900px) {
-  
-  .navbar-title { /*make title smaller*/
-    font-size: 12px;
+  /* Styling for ThemeToggle inside the dropdown */
+  .navbar-dropdown .theme-toggle {
+    margin-top: 10px; /* Add spacing to separate from other links */
+    align-self: center; /* Center it horizontally */
   }
 }

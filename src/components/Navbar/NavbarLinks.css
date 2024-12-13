@@ -20,7 +20,7 @@
 }
 
 @media (max-width: 768px) {
-  .navbar-links {
+  .navbar-links a {
     display: block; /* Stack the links vertically on smaller screens */
     gap: 10px;
     text-align: center; /* Center the links' text on small screens */

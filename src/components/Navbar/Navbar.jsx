@@ -33,6 +33,7 @@ const Navbar = ({ level, setLevel }) => {
       {/* Dropdown menu for mobile */}
       <div className={`navbar-dropdown ${isMenuOpen ? "open" : ""}`}>
         <NavbarLinks />
+        <ThemeToggle /> {/* Place ThemeToggle inside the dropdown */}
       </div>
     </nav>
   );

@@ -1,22 +1,23 @@
 .theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background-color: var(--accent-color);
-    color: var(--text-color);
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  
-  .theme-toggle:hover {
-    background-color: var(--text-color);
-    color: var(--bg-color);
-  }
-  
-  .toggle-icon {
-    font-size: 20px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; /* Define width */
+  height: 40px; /* Define height */
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  border-radius: 50%; /* Ensure it’s a circle */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  aspect-ratio: 1; /* Ensures width and height maintain a 1:1 ratio */
+  box-sizing: border-box; /* Prevents padding or borders from affecting the aspect ratio */
+}
+
+.theme-toggle:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+.toggle-icon {
+  font-size: 20px;
+}

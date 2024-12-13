@@ -1,16 +1,28 @@
 .navbar-links {
-    display: flex;
-    gap: 15px;
-  }
+  display: flex;
+  gap: 15px;
+  justify-content: center; /* Centers the links horizontally */
+  align-items: center; /* Vertically centers the links */
+  width: 100%; /* Ensure the navbar takes up the full width */
+}
 
-  .navbar-links a {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 16px;
+.navbar-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+  text-align: center; /* Center the text within each link */
+  white-space: nowrap; /* Prevent breaking the text into two lines */
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: block; /* Stack the links vertically on smaller screens */
+    gap: 10px;
+    text-align: center; /* Center the links' text on small screens */
   }
-  
-  .navbar-links a:hover {
-    text-decoration: underline;
-    color: var(--accent-color);
-  }
-  
+}

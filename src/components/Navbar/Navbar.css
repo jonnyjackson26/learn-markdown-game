@@ -11,7 +11,7 @@
   font-size: 24px;
   color: var(--accent-color);
   text-decoration: none; /* Ensures the link does not have an underline */
-  font-family: monospace;  
+  font-family: monospace;
 }
 
 .navbar-title:hover {
@@ -22,4 +22,75 @@
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 15px;
+}
+
+.navbar-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.navbar-links a:hover {
+  text-decoration: underline;
+  color: var(--accent-color);
+}
+
+/* Hamburger icon for mobile */
+.navbar-hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 30px;
+}
+
+/* Mobile Dropdown Menu */
+.navbar-dropdown {
+  display: none; /* Hide the dropdown by default */
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: var(--bg-color);
+  padding: 10px;
+  border: 1px solid var(--accent-color);
+}
+
+.navbar-dropdown.open {
+  display: flex; /* Show the dropdown when the 'open' class is added */
+}
+
+.navbar-dropdown .navbar-links a {
+  margin: 5px 0;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+  .navbar-right {
+    display: none; /* Hide the navbar items on mobile */
+  }
+
+  .navbar-hamburger {
+    display: block; /* Show the hamburger icon on mobile */
+  }
+
+  .navbar-dropdown {
+    display: none; /* Ensure dropdown is hidden by default */
+  }
+
+  .navbar-dropdown.open {
+    display: flex; /* Show the dropdown when it's open */
+  }
+}
+
+
+/* Responsive Styles for Mobile */
+@media (max-width: 900px) {
+  
+  .navbar-title { /*make title smaller*/
+    font-size: 12px;
+  }
 }

@@ -1,0 +1,39 @@
+.floating-continue-button {
+    position: absolute;
+    bottom: 50px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 100;
+}
+
+.floating-continue-button.valid {
+    background-color: blue;
+    color: white;
+}
+
+.floating-continue-button:disabled {
+    background-color: var(--continue-button-disabled-bg);
+    cursor: not-allowed;
+}
+
+.floating-continue-button.valid:hover {
+    transform: scale(1.1);
+}
+
+:root {
+    --continue-button-disabled-bg: #444;
+}
+
+body.light-mode {
+    --continue-button-disabled-bg: #888;
+}

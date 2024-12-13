@@ -26,3 +26,16 @@ html, body {
     flex: 1; /* Allow it to grow and fill the remaining space */
     overflow-y: auto; /* Enable scrolling only for the MarkdownGame if necessary */
 }
+
+
+:root {
+    --bg-color: #282c34;
+    --text-color: #ffffff;
+    --accent-color: #61dafb;
+}
+
+body.light-mode {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --accent-color: #007acc;
+}

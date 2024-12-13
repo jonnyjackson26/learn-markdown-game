@@ -11,6 +11,6 @@ make the markdowngame 3 components horziontally resizable
 - can add levels where it gives you certain input and you need to stylize. like use the starter that i orignally had.
 
 make certificate
-make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video-to-gif)
+make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video-to-gif) be sure youre zoomed in 
 make mobile feiendly
 have a challenges page where you edit plain text to make it look like a styled md doc

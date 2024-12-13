@@ -1,109 +1,33 @@
-/* General navbar layout */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #282c34;
     padding: 10px 20px;
-    background-color: var(--navbar-bg);
-    border-bottom: 1px solid var(--navbar-border);
-}
-
-/* Title styling */
-.navbar-title h1 {
-    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .navbar-title {
+    color: #61dafb;
     font-size: 24px;
-    margin: 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-color);
+    padding: 10px 20px;
     color: var(--text-color);
-}
-
-/* Link styling */
-.navbar-title h1 a {
-    color: inherit; /* Use the same color as the h1 */
-    text-decoration: none; /* Remove underline */
-}
-.navbar-title h1 a:hover {
-    color: #666;
-}
-
-/* Level dropdown in the center */
-.navbar-level {
-    margin: 0 20px; /* Space between dropdown and links */
-}
-
-.navbar-level label {
-    color: var(--text-color);
-    margin-right: 5px; /* Small space between label and select */
-}
-
-.navbar-level select {
-    background-color: var(--input-bg);
-    color: var(--text-color);
-}
-
-/* Links styling */
-.navbar-links {
+  }
+  
+  .navbar-title {
+    font-size: 24px;
+    color: var(--accent-color);
+  }
+  
+  .navbar-right {
     display: flex;
     align-items: center;
-}
-
-.navbar-links a {
-    color: var(--text-color);
-    margin-left: 15px; /* Space between links */
-    text-decoration: none;
-}
-
-/* Hide mobile navbar by default */
-.navbar-links.mobile {
-    display: none;
-}
-
-/* Desktop links */
-.navbar-links.desktop {
-    display: flex;
-}
-
-/* Mobile menu toggle (Hamburger icon) */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    width: 30px;
-    height: 30px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.hamburger div {
-    width: 25px;
-    height: 3px;
-    background-color: var(--text-color);
-    border-radius: 5px;
-}
-
-/* Mobile view styles (for screens smaller than 768px) */
-@media (max-width: 768px) {
-    .navbar-links.desktop {
-        display: none; /* Hide the desktop links on mobile */
-    }
-
-    .navbar-links.mobile.active {
-        display: flex; /* Show mobile links when active */
-        flex-direction: column;
-        width: 100%;
-        background-color: var(--navbar-bg);
-        position: absolute;
-        top: 50px;
-        left: 0;
-        padding: 10px 0;
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon on mobile */
-    }
-
-    .navbar-title h1 {
-        font-size: 20px; /* Smaller logo text on mobile */
-    }
-}
+    gap: 20px;
+  }
+  

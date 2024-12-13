@@ -1,33 +1,25 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #282c34;
-    padding: 10px 20px;
-  }
-  
-  .navbar-title {
-    color: #61dafb;
-    font-size: 24px;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--bg-color);
-    padding: 10px 20px;
-    color: var(--text-color);
-  }
-  
-  .navbar-title {
-    font-size: 24px;
-    color: var(--accent-color);
-  }
-  
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-color);
+  padding: 10px 20px;
+  color: var(--text-color);
+}
+
+.navbar-title {
+  font-size: 24px;
+  color: var(--accent-color);
+  text-decoration: none; /* Ensures the link does not have an underline */
+  font-family: monospace;  
+}
+
+.navbar-title:hover {
+  color: var(--highlight-color); /* Change to any color you want on hover */
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

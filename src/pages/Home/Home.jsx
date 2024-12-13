@@ -12,7 +12,7 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <Navbar />
+      <Navbar level={level} setLevel={setLevel}/>
       <div className="markdown-game">
         <MarkdownGame markdown={markdown} setMarkdown={setMarkdown} /> {/* Pass markdown state */}
       </div>

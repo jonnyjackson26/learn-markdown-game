@@ -1,16 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 import NavbarLinks from "./NavbarLinks";
 import LevelSelector from "./LevelSelector";
 import ThemeToggle from "./ThemeToggle";
 
-const Navbar = () => {
+const Navbar = ({ level, setLevel }) => {
   return (
     <nav className="navbar">
-      <h1 className="navbar-title">Markdown Trainer</h1>
+      <Link to="/" className="navbar-title">
+        learn-markdown-game
+      </Link>
       <div className="navbar-right">
+        <LevelSelector level={level} setLevel={setLevel} />
         <NavbarLinks />
-        <LevelSelector />
         <ThemeToggle />
       </div>
     </nav>

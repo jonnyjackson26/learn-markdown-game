@@ -1,14 +1,23 @@
 import React from "react";
 import "./NavbarLinks.css";
+import { Link, useLocation } from "react-router-dom";
 
 const NavbarLinks = () => {
+  const location = useLocation(); // Get the current location
   return (
     <div className="navbar-links">
-      <a href="/about" className="navbar-link">About</a>
-      <a href="/cheatsheet" className="navbar-link">Cheat Sheet</a>
-      <a href="/tutorial" className="navbar-link">Tutorial</a>
-    </div>
+        {location.pathname !== '/' && (
+          <Link to="/">Tutorial</Link>
+        )}
+        <Link to="/about">About</Link>
+        <Link to="/cheat-sheet">Cheat Sheet</Link>
+        <Link to="/live-editor">Live Editor</Link>
+        {/*<Link to="/what-is-markdown">What is Markdown?</Link>*/}
+      </div>
+      
   );
 };
 
 export default NavbarLinks;
+
+

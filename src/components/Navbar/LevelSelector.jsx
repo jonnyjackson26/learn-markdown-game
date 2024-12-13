@@ -1,17 +1,35 @@
 import React from "react";
 import "./LevelSelector.css";
+import level_info from "../../assets/level_info";
+import { Link, useLocation } from "react-router-dom";
 
-const LevelSelector = () => {
+const LevelSelector = ({ level, setLevel }) => {
+  const location = useLocation(); // Get the current location
+
+  // Handle level change
+  const handleLevelChange = (e) => {
+    const selectedLevel = parseInt(e.target.value, 10);
+    setLevel(selectedLevel);
+  };
+
   return (
+    <>
+    {location.pathname === '/' && (
     <div className="level-selector">
-      <label htmlFor="level" className="level-label">Select Level:</label>
-      <select id="level" className="level-dropdown">
-        <option value="beginner">Beginner</option>
-        <option value="intermediate">Intermediate</option>
-        <option value="advanced">Advanced</option>
+      <select id="level" name="level" value={level} onChange={handleLevelChange}>
+        {level_info.map((levelItem) => (
+          <option key={levelItem.level} value={levelItem.level}>
+            Level {levelItem.level}: {levelItem.name}
+          </option>
+        ))}
       </select>
     </div>
+    )}
+    </>
   );
 };
 
 export default LevelSelector;
+
+
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm'; // Import remark-gfm
+import remarkGfm from 'remark-gfm';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 // Function to calculate Levenshtein distance
@@ -33,12 +33,23 @@ const levenshteinDistance = (a, b) => {
 
 // Main validation function
 const isValidMarkdown = (userMarkdown, levelInfo, currentLevel) => {
+    // Check if inputs are valid
+    if (!userMarkdown || !levelInfo || !levelInfo[currentLevel] || !levelInfo[currentLevel].prompt) {
+        return false;
+    }
+
     const userMarkdownTrimmed = userMarkdown.trim();
     const promptMarkdown = levelInfo[currentLevel].prompt.trim();
 
     // Render both markdown inputs to static HTML
-    const userHtml = renderToStaticMarkup(<ReactMarkdown remarkPlugins={[remarkGfm]}>{userMarkdownTrimmed}</ReactMarkdown>);
-    const promptHtml = renderToStaticMarkup(<ReactMarkdown remarkPlugins={[remarkGfm]}>{promptMarkdown}</ReactMarkdown>);
+    let userHtml, promptHtml;
+    try {
+        userHtml = renderToStaticMarkup(<ReactMarkdown remarkPlugins={[remarkGfm]}>{userMarkdownTrimmed}</ReactMarkdown>);
+        promptHtml = renderToStaticMarkup(<ReactMarkdown remarkPlugins={[remarkGfm]}>{promptMarkdown}</ReactMarkdown>);
+    } catch (error) {
+        console.error("Error rendering markdown:", error);
+        return false;
+    }
 
     // Compare rendered HTML directly
     if (userHtml.toLowerCase() === promptHtml.toLowerCase()) {

@@ -1,39 +1,60 @@
 .floating-continue-button {
-    position: absolute;
-    bottom: 50px;
-    right: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    color: var(--text-color);
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    z-index: 100;
+  position: absolute;
+  top: -40px; /* Align with the top of the toggle button */
+  right: 60px; /* Position to the left of the toggle button */
+  padding: 10px 20px;
+  height:40px;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 5px 5px 0 0; /* Rounded top corners */
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  z-index: 99; /* Just below the toggle button */
 }
 
 .floating-continue-button.valid {
-    background-color: blue;
-    color: white;
+  background-color: blue;
+  color: white;
 }
 
 .floating-continue-button:disabled {
-    background-color: var(--continue-button-disabled-bg);
-    cursor: not-allowed;
+  background-color: var(--continue-button-disabled-bg);
+  cursor: not-allowed;
 }
 
 .floating-continue-button.valid:hover {
-    transform: scale(1.1);
+  transform: translateY(-5px);
+}
+
+/* Update toggle button styles to match */
+.toggle-btn {
+  position: absolute;
+  top: -40px;
+  right: 20px;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  padding: 10px;
+  color: var(--text-color);
+  z-index: 100;
+}
+
+/* Ensure the bottom bar accommodates the buttons */
+.bottom-bar-container.closed {
+  transform: translateY(calc(100% - 40px));
 }
 
 :root {
-    --continue-button-disabled-bg: #444;
+  --continue-button-disabled-bg: #444;
 }
 
 body.light-mode {
-    --continue-button-disabled-bg: #888;
+  --continue-button-disabled-bg: #888;
 }

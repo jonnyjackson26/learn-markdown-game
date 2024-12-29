@@ -5,6 +5,7 @@ import { useLevel } from "../../context/LevelContext";
 import level_info from "../../assets/level_info";
 import isValidMarkdown from "../../assets/isValidMarkdown";
 import "./BottomBar.css";
+import ContinueButton from "../ContinueButton/ContinueButton";
 
 const BottomBar = ({ markdown, setMarkdown }) => {
   const { isDarkMode } = useTheme();
@@ -35,6 +36,12 @@ const BottomBar = ({ markdown, setMarkdown }) => {
           <ReactMarkdown>{level_info[level].message}</ReactMarkdown>
         </div>
       </div>
+      <ContinueButton
+        markdown={markdown}
+        setMarkdown={setMarkdown}
+        level={level} // Pass level to ContinueButton
+        setLevel={setLevel} // Pass setLevel to ContinueButton
+      />
       <button className="toggle-btn" onClick={toggleBottomBar}>
         <i className={`fa fa-caret-${isOpen ? "down" : "up"}`}></i>
       </button>

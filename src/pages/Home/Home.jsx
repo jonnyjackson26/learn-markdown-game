@@ -16,13 +16,7 @@ const Home = () => {
       <div className="markdown-game">
         <MarkdownGame markdown={markdown} setMarkdown={setMarkdown} /> {/* Pass markdown state */}
       </div>
-      <ContinueButton
-        markdown={markdown}
-        setMarkdown={setMarkdown}
-        level={level} // Pass level to ContinueButton
-        setLevel={setLevel} // Pass setLevel to ContinueButton
-      />
-      <BottomBar />
+      <BottomBar setLevel={setLevel} markdown={markdown} setMarkdown={setMarkdown}/>
     </div>
   );
 };

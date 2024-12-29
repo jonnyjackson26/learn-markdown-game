@@ -17,8 +17,14 @@ have a challenges page where you edit plain text to make it look like a styled m
 
 
 
+# Todo:
+when i click out of the mobile navbar dropdown, make it disapear
 
-#TODO:
+add a hint button that shows a gif?
+
+make text wrap in the bottom bar
+
+# TODO:
 great! sometimes when i change the theme on one themetoggler but not the other and then make the other appear (by resizing screen), theyre out of sync. how to keep my theme togglers synced up?
 ChatGPT said:
 ChatGPT

@@ -1,9 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./ContinueButton.css";
 import isValidMarkdown from "../../assets/isValidMarkdown";
 import level_info from "../../assets/level_info";
 
 const ContinueButton = ({ markdown, level, setLevel, setMarkdown }) => {
+  const [adjustedBottom, setAdjustedBottom] = useState(50); // Default bottom position
+
   const handleContinue = () => {
     setLevel((prevLevel) => prevLevel + 1);
     setMarkdown("");
@@ -20,7 +22,20 @@ const ContinueButton = ({ markdown, level, setLevel, setMarkdown }) => {
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
     };
-  }, [markdown, level, handleContinue]);
+  }, [markdown, level]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Adjust the button position if the keyboard is visible
+      const isKeyboardVisible = window.innerHeight < window.outerHeight * 0.8;
+      setAdjustedBottom(isKeyboardVisible ? 100 : 50); // Raise the button when the keyboard is visible
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <button
@@ -29,6 +44,7 @@ const ContinueButton = ({ markdown, level, setLevel, setMarkdown }) => {
       }`}
       disabled={!isValidMarkdown(markdown, level_info, level)}
       onClick={handleContinue}
+      style={{ bottom: `${adjustedBottom}px` }} // Dynamically adjust bottom position
     >
       Continue
     </button>

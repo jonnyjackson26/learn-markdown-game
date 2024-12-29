@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import NavbarLinks from "./NavbarLinks";
@@ -7,13 +7,27 @@ import ThemeToggle from "./ThemeToggle";
 
 const Navbar = ({ level, setLevel }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navbarRef = useRef(null);
 
   const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState); // Toggle the state
+    setIsMenuOpen((prevState) => !prevState);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (navbarRef.current && !navbarRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <nav className="navbar">
+    <nav className="navbar" ref={navbarRef}>
       <Link to="/" className="navbar-title">
         learn-markdown-game
       </Link>
@@ -22,7 +36,7 @@ const Navbar = ({ level, setLevel }) => {
 
       <div className="navbar-right">
         <NavbarLinks />
-        <ThemeToggle />
+        <ThemeToggle setIsMenuOpen={setIsMenuOpen}/>
       </div>
 
       {/* Hamburger Icon for mobile */}
@@ -33,7 +47,7 @@ const Navbar = ({ level, setLevel }) => {
       {/* Dropdown menu for mobile */}
       <div className={`navbar-dropdown ${isMenuOpen ? "open" : ""}`}>
         <NavbarLinks />
-        <ThemeToggle /> {/* Place ThemeToggle inside the dropdown */}
+        <ThemeToggle setIsMenuOpen={setIsMenuOpen}/>
       </div>
     </nav>
   );

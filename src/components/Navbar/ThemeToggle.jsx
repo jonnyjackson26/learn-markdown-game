@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 import "./ThemeToggle.css";
 
-const ThemeToggle = () => {
+const ThemeToggle = ({ setIsMenuOpen }) => {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
     const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     document.body.className = `${newTheme}-mode`;
+    if (setIsMenuOpen) {
+      setIsMenuOpen(false); // Close the menu
+    }
   };
 
   return (

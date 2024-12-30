@@ -23,8 +23,13 @@
     width: 100%;
     box-sizing: border-box;
     background-color: var(--bg-color);
-    max-height: 30vh; /* Limit the maximum height */
+  }
+
+  @media (max-width: 768px) { /*this makes it so on mobile theres a max height for the bottom bar */
+    .bottom-bar {
+      max-height: 30vh; /* Limit the maximum height */
     overflow-y: auto; /* Add scrollbar if content exceeds max-height */
+    }
   }
   
   .welcome-message {

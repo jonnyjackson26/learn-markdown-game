@@ -3,7 +3,7 @@ import "./Home.css";
 import MarkdownGame from "../MarkdownGame/MarkdownGame";
 import Navbar from "../../components/Navbar/Navbar";
 import BottomBar from "../../components/BottomBar/BottomBar";
-import ContinueButton from "../../components/ContinueButton/ContinueButton";
+import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import { useLevel } from "../../context/LevelContext"; // Import LevelContext hook
 
 const Home = () => {
@@ -13,6 +13,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <Navbar level={level} setLevel={setLevel}/>
+      <ProgressBar level={level} />
       <div className="markdown-game">
         <MarkdownGame markdown={markdown} setMarkdown={setMarkdown} /> {/* Pass markdown state */}
       </div>

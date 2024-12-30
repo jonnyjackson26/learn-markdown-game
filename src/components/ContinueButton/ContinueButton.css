@@ -14,7 +14,7 @@
   justify-content: center;
   align-items: center;
   box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.3s ease, scale 0.3s ease;
   z-index: 99; /* Just below the toggle button */
 }
 
@@ -29,7 +29,7 @@
 }
 
 .floating-continue-button.valid:hover {
-  transform: translateY(-5px);
+  scale: 1.05;
 }
 
 /* Update toggle button styles to match */

@@ -1,7 +1,7 @@
 /* Ensure the body and html take up the full height */
 html, body {
     height: 100%;
-    margin: 0; /* Remove default margin */
+    margin: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -9,24 +9,28 @@ html, body {
 .home-container {
     display: flex;
     flex-direction: column;
-    height: 100vh; /* Full viewport height */
+    height: 100vh;
 }
 
 /* Navbar and BottomBar should take their content size */
 .navbar {
-    flex: 0 0 auto; /* Prevent growth, maintain content size */
+    flex: 0 0 auto;
 }
 
 .bottom-bar {
-    flex: 0 0 auto; /* Prevent growth, maintain content size */
+    flex: 0 0 auto;
+}
+
+/* ProgressBar styles */
+.progress-bar-container {
+    flex: 0 0 auto;
 }
 
 /* MarkdownGame should take the remaining space */
 .markdown-game {
-    flex: 1; /* Allow it to grow and fill the remaining space */
-    overflow-y: auto; /* Enable scrolling only for the MarkdownGame if necessary */
+    flex: 1;
+    overflow-y: auto;
 }
-
 
 :root {
     --bg-color: #282c34;

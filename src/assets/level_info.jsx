@@ -3,43 +3,32 @@ const level_info = [
         level: 0,
         name: "Normal Text",
         prompt: "Normal Text",
-        message: `Welcome to the \`learn-markdown-game\`! Markdown is commonly used in \`README.md\`, Jupyter notebooks, and various other places. There are 20 levels to this tutorial and a few checkpoints, and by the end you'll be a master of Markdown!
-
-In this example, you'll learn the easiest thing in Markdown: **normal text**.
-
-Type text in the middle panel to see it rendered in the right panel. Your goal is to recreate whats in the left panel. 
+        message: `Welcome to the \`learn-markdown-game\`! Markdown is commonly used in \`README.md\`, Jupyter notebooks, and various other places. There are 20 levels to this tutorial and a few checkpoints, and by the end you'll be a master of Markdown!      \n In this example, you'll learn the easiest thing in Markdown: **normal text**.     \n Type text in the middle panel to see it rendered in the right panel. Your goal is to recreate whats in the left panel. 
 `,
     },
     {
         level: 1,
         name: "Italics",
         prompt: "*Italics*",
-        message: `Create *italic text* by adding a single asterisk on both sides of your text. (\`*\italic text\*\`).`,
+        message: `Create *italic text* by adding a single asterisk on both sides of your text.\n \`*\italic text\*\``,
     },
     {
         level: 2,
         name: "Bold",
         prompt: "**Bold**",
-        message: `Create **bold text** by adding double asterisks on both sides of your text. (\`**bold text\**\`).`,
+        message: `Create **bold text** by adding double asterisks on both sides of your text. \n \`**bold text\**\``,
     },
     {
         level: 3,
         name: "Heading 1",
         prompt: "# Heading 1",
-        message: `To create a heading, use a \`#\` followed by a space, then your heading text like this:
-
-\`# This is my heading\` 
-`,
+        message: `To create a heading, use a \`#\` followed by a space, then your heading text.\n \`# This is my heading\` `,
     },
     {
         level: 4,
         name: "All Headings",
         prompt: `# Heading 1\n## Heading 2\n### Heading 3\n#### Heading 4\n##### Heading 5\n###### Heading 6`,
-        message: `Markdown has 6 levels of headings. Heading 1 is the biggest, and Heading 6 is the smallest. \
-        
-        Heading 1 is followed by 1 hash (\`#\`), Heading 2 by 2 hashes, and so on.
-
-
+        message: `Markdown has 6 levels of headings. Heading 1 is the biggest, and Heading 6 is the smallest. \n Heading 1 is followed by 1 hash (\`#\`), Heading 2 by 2 hashes, and so on.
 \`\`\`hint
 Hint: You can copy the text from the left panel and paste it into the middle if you don't want to type out each heading.
 \`\`\``,

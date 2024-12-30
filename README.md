@@ -16,6 +16,7 @@ have a challenges page where you edit plain text to make it look like a styled m
 add a gradient layer thing to show progress
 
 # Todo:
+for the live editor have it show download button and horizontal/veritcal toggle button
 add a hint button that shows a gif?
 
 make text wrap in the bottom bar

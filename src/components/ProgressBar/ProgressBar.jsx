@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import level_info from '../../assets/level_info';
 import './ProgressBar.css';
 
 const ProgressBar = ({ level }) => {
   const [width, setWidth] = useState(0);
-  const totalLevels = 23; // Adjust this based on your total number of levels
+  const totalLevels = level_info.length;
 
   useEffect(() => {
     setWidth((level / totalLevels) * 100);

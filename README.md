@@ -16,8 +16,11 @@ have a challenges page where you edit plain text to make it look like a styled m
 add a gradient layer thing to show progress
 
 # Todo:
+eachtime i go to a new level, clear the input bc sometimes i get extra newlines
+
 for the live editor have it show download button and horizontal/veritcal toggle button
 add a hint button that shows a gif?
+add type in levels and some are checkpoints and then at those checkpoints in the progress bar, put a star
 
 make text wrap in the bottom bar
 

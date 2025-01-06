@@ -83,3 +83,10 @@ textarea {
     color: green;
     font-weight: bold;
 }
+
+/* Error message */
+.error-message {
+    margin-top: var(--spacing);
+    color: red;
+    font-weight: bold;
+}

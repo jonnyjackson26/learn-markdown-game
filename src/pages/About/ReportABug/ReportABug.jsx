@@ -1,19 +1,35 @@
 import React, { useState } from 'react';
 import './ReportABug.css';
 import Navbar from '../../../components/Navbar/Navbar';
+import emailjs from '@emailjs/browser';
 
 const ReportABug = () => {
     const [email, setEmail] = useState('');
     const [description, setDescription] = useState('');
-    const [message, setMessage] = useState('');
+    const [message, setMessage] = useState({ text: '', type: '' });
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const mailtoLink = `mailto:your-email@example.com?subject=Bug Report&body=Description: ${encodeURIComponent(description)}%0D%0AEmail: ${encodeURIComponent(email)}`;
-        window.location.href = mailtoLink;
-        setMessage('Thank you for reporting the bug!');
-        setEmail('');
-        setDescription('');
+
+        // Replace with your EmailJS credentials
+        const serviceID = 'learn-markdown-game-serv';
+        const templateID = 'learn-markdown-game-tmpl';
+        const publicKey = 'RvRZJ8_KLtjGvgQgy';
+
+        const templateParams = {
+            user_email: email,
+            description: description,
+        };
+
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then(() => {
+                setMessage({ text: 'Thank you for reporting the bug!', type: 'success' });
+                setEmail('');
+                setDescription('');
+            })
+            .catch(() => {
+                setMessage({ text: 'Oops! Something went wrong. Please try again.', type: 'error' });
+            });
     };
 
     return (
@@ -43,7 +59,11 @@ const ReportABug = () => {
 
                     <button type="submit" className="submit-button">Submit</button>
                 </form>
-                {message && <p className="success-message">{message}</p>}
+                {message.text && (
+                    <p className={message.type === 'success' ? 'success-message' : 'error-message'}>
+                        {message.text}
+                    </p>
+                )}
             </div>
         </>
     );

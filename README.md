@@ -6,19 +6,20 @@ make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video
 make mobile feiendly
 have a challenges page where you edit plain text to make it look like a styled md doc
 
-add documentation and report bugs on about page
+fix some of the later levels messages
+
 
 # Todo:
 
 add intro for level 0 in which we talk about what markdown is. the continue button should auto be blue
 
 for the live editor have it show download button and horizontal/veritcal toggle button
-add a hint button that shows a gif?
-add type in levels and some are checkpoints and then at those checkpoints in the progress bar, put a star
 
-make text wrap in the bottom bar
+add "type" in levels and some are checkpoints and then at those checkpoints in the progress bar, put a star
 
-ai hints from bottom bar
+ai hints/gifs from bottom bar
+
+the bottom bar takes up space from the actual game, so on short screens its bad.
 
 make navbar stick to top
 maybe underline the page youre on too?

@@ -1,0 +1,57 @@
+/* Root variables for light and dark modes */
+:root {
+    --light-bg: #ffffff;
+    --light-text: #333333;
+    --dark-bg: #1a1a1a;
+    --dark-text: #e0e0e0;
+    --primary-color: #007bff;
+    --font-family: 'Arial', sans-serif;
+    --spacing: 1.5em;
+    --line-height: 1.6;
+}
+
+/* Dark mode */
+body.dark-mode {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* Container styling */
+.documentation-container {
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: var(--font-family);
+    line-height: var(--line-height);
+}
+
+/* Heading */
+.documentation-container h1 {
+    margin-bottom: var(--spacing);
+    font-size: 2em;
+}
+
+/* Paragraphs and list */
+.documentation-container p {
+    margin-bottom: var(--spacing);
+}
+
+.documentation-container ul {
+    margin-top: var(--spacing);
+    padding-left: 1.5rem;
+}
+
+.documentation-container li {
+    margin-bottom: 0.8em;
+}
+
+/* Links */
+.documentation-container a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.documentation-container a:hover {
+    text-decoration: underline;
+}

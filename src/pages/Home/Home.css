@@ -43,3 +43,10 @@ body.light-mode {
     --text-color: #000000;
     --accent-color: #007acc;
 }
+
+
+
+/* this is to intsenify the italic */
+em:not(.not-extreeme-italics) {
+    font-family:  serif;
+}

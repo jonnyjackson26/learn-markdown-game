@@ -7,6 +7,8 @@ import { ThemeProvider } from './context/ThemeContext'; // Import the ThemeProvi
 import { LevelProvider } from './context/LevelContext';
 import CheatSheet from './pages/CheatSheet/CheatSheet';
 import LiveEditor from './pages/LiveEditor/LiveEditor';
+import Documentation from './pages/About/Documentation/Documentation';
+import ReportABug from './pages/About/ReportABug/ReportABug';
 
 const router = createHashRouter([
   {
@@ -24,6 +26,14 @@ const router = createHashRouter([
   {
     path: "/live-editor",
     element: <LiveEditor />,
+  },
+  {
+    path: "/documentation",
+    element: <Documentation />,
+  },
+  {
+    path: "/report-a-bug",
+    element: <ReportABug />,
   },
 ]);
 

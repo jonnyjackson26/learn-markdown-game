@@ -226,8 +226,12 @@ body.dark-mode {
 .goal-section blockquote,
 .markdown-output blockquote {
     padding: 0 1em;
+    padding-top:0em;
     color: var(--blockquote-color);
     margin: 0 0 16px 0;
+}
+.markdown-output blockquote {
+    line-height:.5;
 }
 
 /* Tables */
@@ -291,6 +295,7 @@ a:not(.navbar a) {
     margin-bottom: 0em;
 }
 
+
 .markdown-output hr {
     margin-top: 0em;
     margin-bottom: 0em;
@@ -321,7 +326,6 @@ a:not(.navbar a) {
 /* Adjust list spacing in preview section */
 .markdown-output ul,
 .markdown-output ol {
-    padding-left: 0em;
     margin-top: 0em;
     padding-top:0em;
     margin-bottom: 0em;

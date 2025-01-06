@@ -1,11 +1,4 @@
-This is the learn markdown game
-Its fun like flex box froggy
-and helps you learn markdown
-Has 3 splits (one for the example that youre trying to get to) (one for you to type) (and one for your code to execute)
-
-
-
-make the markdowngame 3 components horziontally resizable
+make panels resizable
 - can add levels where it gives you certain input and you need to stylize. like use the starter that i orignally had.
 
 make certificate
@@ -13,16 +6,81 @@ make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video
 make mobile feiendly
 have a challenges page where you edit plain text to make it look like a styled md doc
 
-add a gradient layer thing to show progress
+add documentation and report bugs on about page
 
 # Todo:
-eachtime i go to a new level, clear the input bc sometimes i get extra newlines
+
+add intro for level 0 in which we talk about what markdown is. the continue button should auto be blue
 
 for the live editor have it show download button and horizontal/veritcal toggle button
 add a hint button that shows a gif?
 add type in levels and some are checkpoints and then at those checkpoints in the progress bar, put a star
 
 make text wrap in the bottom bar
+
+ai hints from bottom bar
+
+make navbar stick to top
+maybe underline the page youre on too?
+
+level 13's message is hard bc i cant display the backticks (its the code block level)
+
+# TODO:
+im using react-markdown to dynmically display markdown. when someone puts a link and then clicks on it, it opens in this current tab. how to make it so all links open in a new tab?
+ChatGPT said:
+ChatGPT
+When using react-markdown to render markdown content, you can customize how links are rendered by providing a custom components object to the ReactMarkdown component. To make all links open in a new tab, override the a (anchor) tag to include the target="_blank" and rel="noopener noreferrer" attributes.
+
+Here’s how you can do it:
+
+Example Code:
+jsx
+Copy code
+import React from "react";
+import ReactMarkdown from "react-markdown";
+
+const MarkdownRenderer = ({ markdown }) => {
+    const components = {
+        a: ({ href, children }) => (
+            <a href={href} target="_blank" rel="noopener noreferrer">
+                {children}
+            </a>
+        ),
+    };
+
+    return <ReactMarkdown components={components}>{markdown}</ReactMarkdown>;
+};
+
+export default MarkdownRenderer;
+Explanation:
+Customizing Links:
+
+The components object allows you to specify how certain Markdown elements are rendered. For links (a), we provide a custom rendering function.
+The target="_blank" ensures the link opens in a new tab.
+The rel="noopener noreferrer" improves security by preventing the new page from accessing the window.opener object and avoiding potential phishing attacks.
+Usage:
+
+jsx
+Copy code
+import React from "react";
+import MarkdownRenderer from "./MarkdownRenderer";
+
+const App = () => {
+    const markdownContent = `
+    [Open Google](https://www.google.com)
+    `;
+
+    return (
+        <div>
+            <h1>Markdown Example</h1>
+            <MarkdownRenderer markdown={markdownContent} />
+        </div>
+    );
+};
+
+export default App;
+Now, any links in the markdown content will open in a new tab automatically.
+
 
 # TODO:
 great! sometimes when i change the theme on one themetoggler but not the other and then make the other appear (by resizing screen), theyre out of sync. how to keep my theme togglers synced up?

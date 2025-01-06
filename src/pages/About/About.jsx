@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 import Navbar from '../../components/Navbar/Navbar';
 
 const About = () => {
@@ -14,6 +14,9 @@ const About = () => {
                     me, Jonny Jackson, to help you learn Markdown in an interactive way. 
                     You can find more about me at my personal website: 
                     <a href="https://jonny-jackson.com" target="_blank" rel="noopener noreferrer"> jonny-jackson.com</a>.
+                </p>
+                <p>
+                    When I started learning markdown in college, I noticed there were plenty of videos I'd watch on YouTube but nothing stuck with me until I started writing my own. I've always belived that its much better to learn by <em class="not-extreeme-italics">doing</em> rather than by <em class="not-extreeme-italics">watching,</em> so I created this site. 
                 </p>
                 <p>
                     Although this resource is free to use, if you'd like to support the project, 
@@ -32,6 +35,10 @@ const About = () => {
                     Watch our <a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID" target="_blank" rel="noopener noreferrer">
                     Markdown Tutorial Video</a> on YouTube to get started!
                 </p>*/}
+                <p>
+                    Visit our <Link to="/documentation">Documentation</Link> for more detailed information, 
+                    or <Link to="/report-a-bug">Report a Bug</Link> if you encounter any issues.
+                </p>
             </div>
         </>
     );

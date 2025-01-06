@@ -39,8 +39,8 @@ const BottomBar = ({ markdown, setMarkdown }) => {
       <ContinueButton
         markdown={markdown}
         setMarkdown={setMarkdown}
-        level={level} // Pass level to ContinueButton
-        setLevel={setLevel} // Pass setLevel to ContinueButton
+        level={level}
+        setLevel={setLevel}
       />
       <button className="toggle-btn" onClick={toggleBottomBar}>
         <i className={`fa fa-caret-${isOpen ? "down" : "up"}`}></i>

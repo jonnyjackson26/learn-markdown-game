@@ -14,6 +14,7 @@ const ContinueButton = ({ markdown, level, setLevel, setMarkdown }) => {
   useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "Enter" && isValidMarkdown(markdown, level_info, level)) {
+        event.preventDefault(); // Prevent default Enter behavior
         handleContinue();
       }
     };

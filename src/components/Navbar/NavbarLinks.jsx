@@ -6,9 +6,6 @@ const NavbarLinks = () => {
   const location = useLocation(); // Get the current location
   return (
     <div className="navbar-links">
-        {location.pathname !== '/' && (
-          <Link to="/">Home</Link>
-        )}
         {location.pathname !== '/tutorial' && (
           <Link to="/tutorial">Tutorial</Link>
         )}

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css'; // Import global CSS
 import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import { createHashRouter, RouterProvider } from 'react-router-dom';

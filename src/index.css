@@ -1,0 +1,97 @@
+/* Global styles for font consistency */
+:root {
+  /* Font families */
+  --primary-font: 'Roboto', sans-serif;
+  --heading-font: 'Montserrat', sans-serif;
+  --code-font: monospace;
+  
+  /* Font sizes */
+  --font-size-base: 16px;
+  --font-size-small: 0.875rem;
+  --font-size-medium: 1rem;
+  --font-size-large: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-xxl: 1.5rem;
+  --font-size-heading: 2rem;
+  
+  /* Colors (light mode) */
+  --light-bg: #ffffff;
+  --light-text: #333333;
+  --dark-bg: #1a1a1a;
+  --dark-text: #e0e0e0;
+  --primary-color: #007bff;
+  
+  /* Spacing */
+  --spacing-base: 1rem;
+  --line-height: 1.6;
+}
+
+/* Base styles */
+html, body {
+  font-family: var(--primary-font);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 600;
+  margin-top: 0;
+}
+
+h1 {
+  font-size: var(--font-size-heading);
+}
+
+h2 {
+  font-size: var(--font-size-xxl);
+}
+
+h3 {
+  font-size: var(--font-size-xl);
+}
+
+p {
+  font-size: var(--font-size-medium);
+  margin-bottom: var(--spacing-base);
+}
+
+code, pre {
+  font-family: var(--code-font);
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+}
+
+/* Dark mode overrides */
+body.dark-mode {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark-mode code, 
+body.dark-mode pre {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 14px;
+    --font-size-heading: 1.75rem;
+  }
+} 

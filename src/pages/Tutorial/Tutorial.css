@@ -1,0 +1,11 @@
+.tutorial-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.markdown-game {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+} 

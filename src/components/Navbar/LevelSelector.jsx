@@ -14,7 +14,7 @@ const LevelSelector = ({ level, setLevel }) => {
 
   return (
     <>
-    {location.pathname === '/' && (
+    {location.pathname === '/tutorial' && (
     <div className="level-selector">
       <select id="level" name="level" value={level} onChange={handleLevelChange}>
         {level_info.map((levelItem) => (

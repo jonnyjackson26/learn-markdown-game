@@ -5,7 +5,7 @@ import NavbarLinks from "./NavbarLinks";
 import LevelSelector from "./LevelSelector";
 import ThemeToggle from "./ThemeToggle";
 
-const Navbar = ({ level, setLevel }) => {
+const Navbar = ({ level = null, setLevel = null }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navbarRef = useRef(null);
 
@@ -32,7 +32,9 @@ const Navbar = ({ level, setLevel }) => {
         learn-markdown-game
       </Link>
 
-      <LevelSelector level={level} setLevel={setLevel} />
+      {level !== null && setLevel !== null && (
+        <LevelSelector level={level} setLevel={setLevel} />
+      )}
 
       <div className="navbar-right">
         <NavbarLinks />

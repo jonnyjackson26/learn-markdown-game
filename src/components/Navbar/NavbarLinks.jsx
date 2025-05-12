@@ -7,7 +7,10 @@ const NavbarLinks = () => {
   return (
     <div className="navbar-links">
         {location.pathname !== '/' && (
-          <Link to="/">Tutorial</Link>
+          <Link to="/">Home</Link>
+        )}
+        {location.pathname !== '/tutorial' && (
+          <Link to="/tutorial">Tutorial</Link>
         )}
         <Link to="/about">About</Link>
         <Link to="/cheat-sheet">Cheat Sheet</Link>

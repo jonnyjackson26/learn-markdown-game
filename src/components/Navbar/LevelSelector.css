@@ -12,18 +12,31 @@
 select {
   padding: 8px 12px;
   font-size: 14px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  border: 1px solid var(--accent-color);
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  border: 1px solid var(--navbar-accent);
   border-radius: 5px;
-  transition: border-color 0.3s ease;
+  transition: all 0.3s ease;
   cursor: pointer;
   width: 100%; /* Make the select element flexible */
   max-width: 100%; /* Ensure it does not grow too wide */
 }
 
 select:focus {
-  border-color: var(--highlight-color);
+  border-color: var(--navbar-highlight);
   outline: none;
+  box-shadow: 0 0 0 2px rgba(var(--navbar-accent-rgb, 0, 123, 255), 0.25);
+}
+
+/* Style for the dropdown options */
+select option {
+  background-color: var(--navbar-bg);
+  color: var(--navbar-text);
+  padding: 8px;
+}
+
+/* Add a hover effect for better user experience */
+select:hover {
+  border-color: var(--navbar-highlight);
 }
 

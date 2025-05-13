@@ -8,7 +8,7 @@ const Home = () => {
   const { isDarkMode } = useTheme();
 
   return (
-    <div className={`home-container ${isDarkMode ? 'dark-mode' : ''}`}>
+    <div className={`home-container`}>
       <Navbar />
       <div className="welcome-container">
         <div className="welcome-content">

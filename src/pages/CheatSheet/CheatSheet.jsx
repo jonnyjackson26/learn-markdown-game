@@ -22,7 +22,7 @@ const CheatSheet = () => {
     return (
         <>
             <Navbar /> {/* Include the Navbar */}
-            <div className={isDarkMode ? 'dark-mode' : ''}>
+            <div>
                 <div className="cheat-sheet">
                     <h1>GitHub-Flavored Markdown Cheat Sheet</h1>
                     <p>This is intended as a quick reference and showcase. For more complete info, see the <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">GitHub-flavored Markdown info page.</a></p>

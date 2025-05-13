@@ -1,21 +1,43 @@
+/* Navbar variables for light/dark mode */
+:root {
+  --navbar-bg: #ffffff;
+  --navbar-text: #333333;
+  --navbar-accent: #007bff;
+  --navbar-accent-rgb: 0, 123, 255;
+  --navbar-highlight: #0056b3;
+  --navbar-border: #dddddd;
+}
+
+body.dark-mode {
+  --navbar-bg: #222222;
+  --navbar-text: #f5f5f5;
+  --navbar-accent: #66b3ff;
+  --navbar-accent-rgb: 102, 179, 255;
+  --navbar-highlight: #99ccff;
+  --navbar-border: #444444;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-color);
+  background-color: var(--navbar-bg);
   padding: 10px 20px;
-  color: var(--text-color);
+  color: var(--navbar-text);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-title {
   font-size: 24px;
-  color: var(--accent-color);
+  color: var(--navbar-accent);
   text-decoration: none;
-  font-family: monospace;
+  font-family: var(--code-font, monospace);
+  transition: color 0.3s ease;
 }
 
 .navbar-title:hover {
-  color: var(--highlight-color);
+  color: var(--navbar-highlight);
 }
 
 .navbar-right {
@@ -30,14 +52,15 @@
 }
 
 .navbar-links a {
-  color: var(--text-color);
+  color: var(--navbar-text);
   text-decoration: none;
   font-size: 16px;
+  transition: color 0.3s ease;
 }
 
 .navbar-links a:hover {
   text-decoration: underline;
-  color: var(--accent-color);
+  color: var(--navbar-accent);
 }
 
 /* Hamburger icon for mobile */
@@ -45,6 +68,7 @@
   display: none;
   cursor: pointer;
   font-size: 30px;
+  color: var(--navbar-text);
 }
 
 /* Mobile Dropdown Menu */
@@ -54,13 +78,22 @@
   position: absolute;
   top: 60px;
   right: 20px;
-  background-color: var(--bg-color);
+  background-color: var(--navbar-bg);
   padding: 10px;
-  border: 1px solid var(--accent-color);
+  border: 1px solid var(--navbar-border);
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  transition: background-color 0.3s ease;
 }
 
 .navbar-dropdown.open {
   display: flex; /* Show the dropdown when the 'open' class is added */
+}
+
+.navbar-dropdown .navbar-links {
+  flex-direction: column;
+  gap: 10px;
 }
 
 .navbar-dropdown .navbar-links a {

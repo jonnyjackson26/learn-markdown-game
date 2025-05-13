@@ -1,21 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import "./ThemeToggle.css";
+import { useTheme } from "../../context/ThemeContext";
 
 const ThemeToggle = ({ setIsMenuOpen }) => {
-  const [theme, setTheme] = useState("dark");
+  const { isDarkMode, toggleTheme } = useTheme();
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    document.body.className = `${newTheme}-mode`;
+  const handleToggle = () => {
+    toggleTheme();
     if (setIsMenuOpen) {
       setIsMenuOpen(false); // Close the menu
     }
   };
 
   return (
-    <div className="theme-toggle" onClick={toggleTheme}>
-      {theme === "dark" ? (
+    <div className="theme-toggle" onClick={handleToggle}>
+      {isDarkMode ? (
         <i className="fas fa-sun toggle-icon"></i>
       ) : (
         <i className="fas fa-moon toggle-icon"></i>

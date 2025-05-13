@@ -1,49 +1,72 @@
+/* Continue Button variables for light/dark mode */
+:root {
+  --continue-button-bg: #f5f5f5;
+  --continue-button-text: #333333;
+  --continue-button-valid-bg: var(--primary-color);
+  --continue-button-valid-bg-hover:  var(--accent-color);
+  --continue-button-valid-text: #ffffff;
+  --continue-button-disabled-bg: #dddddd;
+  --continue-button-disabled-text: #999999;
+  --continue-button-shadow: rgba(0, 0, 0, 0.2);
+  --continue-button-border: #dddddd;
+}
+
+body.dark-mode {
+  --continue-button-bg: #333333;
+  --continue-button-text: #f5f5f5;
+  --continue-button-valid-bg: var(--primary-color);
+  --continue-button-valid-bg-hover:  var(--accent-color);
+  --continue-button-valid-text: #ffffff;
+  --continue-button-disabled-bg: #444444;
+  --continue-button-disabled-text: #aaaaaa;
+  --continue-button-shadow: rgba(0, 0, 0, 0.4);
+  --continue-button-border: #444444;
+}
+
 .floating-continue-button {
   position: absolute;
-  top: -40px; /* Align with the top of the toggle button */
-  right: 60px; /* Position to the left of the toggle button */
+  top: -40px;
+  right: 80px;
   padding: 10px 20px;
-  height:40px;
+  height: 40px;
   font-size: 16px;
-  color: var(--text-color);
-  background-color: var(--bg-color);
-  border: none;
-  border-radius: 5px 5px 0 0; /* Rounded top corners */
+  font-weight: 600;
+  color: var(--continue-button-text);
+  background-color: var(--continue-button-bg);
+  border: 1px solid var(--continue-button-border);
+  border-bottom: none;
+  border-radius: 5px 5px 0 0;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.3s ease, scale 0.3s ease;
-  z-index: 99; /* Just below the toggle button */
+  box-shadow: 0 -4px 8px var(--continue-button-shadow);
+  transition: all 0.3s ease;
+  z-index: 99;
 }
 
 .floating-continue-button.valid {
-  background-color: blue;
-  color: white;
+  background-color: var(--continue-button-valid-bg);
+  color: var(--continue-button-valid-text);
+  box-shadow: 0 -4px 12px rgba(0, 102, 204, 0.3);
 }
 
 .floating-continue-button:disabled {
   background-color: var(--continue-button-disabled-bg);
+  color: var(--continue-button-disabled-text);
   cursor: not-allowed;
+  opacity: 0.8;
 }
 
 .floating-continue-button.valid:hover {
-  scale: 1.05;
+  background-color: var(--continue-button-valid-bg-hover);
+  transform: scaleY(1.05);
+  transform-origin: bottom;
+  box-shadow: 0 -6px 12px rgba(0, 102, 204, 0.4);
 }
 
-/* Update toggle button styles to match */
-.toggle-btn {
-  position: absolute;
-  top: -40px;
-  right: 20px;
-  background-color: var(--bg-color);
-  border: none;
-  border-radius: 5px 5px 0 0;
-  cursor: pointer;
-  padding: 10px;
-  color: var(--text-color);
-  z-index: 100;
+.floating-continue-button:not(.valid):hover:not(:disabled) {
+  background-color: var(--continue-button-border);
 }
 
 /* Ensure the bottom bar accommodates the buttons */
@@ -51,10 +74,3 @@
   transform: translateY(calc(100% - 40px));
 }
 
-:root {
-  --continue-button-disabled-bg: #444;
-}
-
-body.light-mode {
-  --continue-button-disabled-bg: #888;
-}

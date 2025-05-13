@@ -10,7 +10,105 @@ html, body {
     display: flex;
     flex-direction: column;
     height: 100vh;
-    font-family: 'Arial', sans-serif;
+    font-family: var(--primary-font, 'Arial', sans-serif);
+    overflow: hidden; /* Prevent scrolling at container level */
+}
+
+/* Editor wrapper to take up full height/width */
+.editor-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Override Editor component styles to take full height */
+.editor-wrapper > div {
+    height: 100% !important;
+    width: 100% !important;
+    max-height: none !important;
+}
+
+/* Allow scrolling within the editor panels */
+.markdown-editor, 
+.markdown-output {
+    overflow-y: auto !important;
+}
+
+/* Keyframes for gradient border animation */
+@keyframes gradientBorder {
+  0% {
+    border-color: #75d0ef;
+    box-shadow: 0 4px 15px rgba(117, 208, 239, 0.4);
+  }
+  25% {
+    border-color: #1818ec;
+    box-shadow: 0 4px 15px rgba(24, 24, 236, 0.4);
+  }
+  50% {
+    border-color: #4e85e8;
+    box-shadow: 0 4px 15px rgba(78, 133, 232, 0.4);
+  }
+  75% {
+    border-color: #1818ec;
+    box-shadow: 0 4px 15px rgba(24, 24, 236, 0.4);
+  }
+  100% {
+    border-color: #75d0ef;
+    box-shadow: 0 4px 15px rgba(117, 208, 239, 0.4);
+  }
+}
+
+/* Center the CTA button at the bottom of the page */
+.centered-cta {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    pointer-events: auto;
+    width: auto;
+}
+
+/* Button styling with consistent colors across themes */
+.cta-button {
+    display: inline-block;
+    background-color: #0066cc; /* Fixed blue background */
+    color: white !important; /* Always white text */
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    border: 3px solid #75d0ef;
+    text-align: center;
+    animation: gradientBorder 8s ease infinite;
+}
+
+.cta-button:hover {
+    background-color: #0052a3; /* Darker blue on hover */
+    transform: translateY(-2px) scale(1.05);
+}
+
+/* Remove theme-specific styling */
+body.dark-mode .cta-button {
+    /* No theme-specific overrides */
+}
+
+/* This is to intensify the italic */
+em:not(.not-extreeme-italics) {
+    font-family: serif;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 0.8rem 2rem;
+    }
 }
 
 /* Navbar and BottomBar should take their content size */
@@ -43,16 +141,6 @@ body.light-mode {
     --bg-color: #ffffff;
     --text-color: #000000;
     --accent-color: #007acc;
-}
-
-/* this is to intsenify the italic */
-em:not(.not-extreeme-italics) {
-    font-family:  serif;
-}
-
-.dark-mode {
-    background-color: #1a1a1a;
-    color: #f5f5f5;
 }
 
 .welcome-container {
@@ -105,25 +193,6 @@ em:not(.not-extreeme-italics) {
     margin-top: 2rem;
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: #0066cc;
-    color: white;
-    font-size: 1.2rem;
-    font-weight: bold;
-    padding: 0.8rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.cta-button:hover {
-    background-color: #0052a3;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-}
-
 @media (max-width: 768px) {
     .welcome-content h1 {
         font-size: 2rem;
@@ -131,10 +200,5 @@ em:not(.not-extreeme-italics) {
     
     .welcome-content p {
         font-size: 1rem;
-    }
-    
-    .cta-button {
-        font-size: 1.1rem;
-        padding: 0.7rem 1.8rem;
     }
 }

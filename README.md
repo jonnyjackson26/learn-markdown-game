@@ -1,13 +1,52 @@
 make panels resizable
+
 - can add levels where it gives you certain input and you need to stylize. like use the starter that i orignally had.
 
 make certificate
-make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video-to-gif) be sure youre zoomed in 
+make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video-to-gif) be sure youre zoomed in
 make mobile feiendly
 have a challenges page where you edit plain text to make it look like a styled md doc
 
 fix some of the later levels messages
 
+# Firebase Analytics Setup
+
+This project uses Firebase Analytics to track user interactions. The Firebase configuration is stored in environment variables to keep sensitive data secure.
+
+## Environment Setup
+
+1. Create a `.env` file in the root directory with the following variables:
+
+```
+VITE_FIREBASE_API_KEY=your-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_STORAGE_BUCKET=your-project-id.appspot.com
+VITE_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+VITE_FIREBASE_APP_ID=your-app-id
+VITE_FIREBASE_MEASUREMENT_ID=your-measurement-id
+```
+
+2. Make sure the `.env` file is included in `.gitignore` to prevent committing sensitive data to the repository.
+
+## Using Analytics in Components
+
+You can use the `useAnalytics` hook to track events in your components:
+
+```jsx
+import { useAnalytics } from "../hooks/useAnalytics";
+
+function MyComponent() {
+  const { trackEvent, trackAction } = useAnalytics();
+
+  const handleButtonClick = () => {
+    trackAction("button_click", { button_name: "submit" });
+    // Your button click logic
+  };
+
+  return <button onClick={handleButtonClick}>Submit</button>;
+}
+```
 
 # Todo:
 
@@ -27,12 +66,13 @@ maybe underline the page youre on too?
 level 13's message is hard bc i cant display the backticks (its the code block level)
 
 # TODO:
+
 im using react-markdown to dynmically display markdown. when someone puts a link and then clicks on it, it opens in this current tab. how to make it so all links open in a new tab?
 ChatGPT said:
 ChatGPT
-When using react-markdown to render markdown content, you can customize how links are rendered by providing a custom components object to the ReactMarkdown component. To make all links open in a new tab, override the a (anchor) tag to include the target="_blank" and rel="noopener noreferrer" attributes.
+When using react-markdown to render markdown content, you can customize how links are rendered by providing a custom components object to the ReactMarkdown component. To make all links open in a new tab, override the a (anchor) tag to include the target="\_blank" and rel="noopener noreferrer" attributes.
 
-Here’s how you can do it:
+Here's how you can do it:
 
 Example Code:
 jsx
@@ -41,15 +81,16 @@ import React from "react";
 import ReactMarkdown from "react-markdown";
 
 const MarkdownRenderer = ({ markdown }) => {
-    const components = {
-        a: ({ href, children }) => (
-            <a href={href} target="_blank" rel="noopener noreferrer">
-                {children}
-            </a>
-        ),
-    };
+const components = {
+a: ({ href, children }) => (
+<a href={href} target="_blank" rel="noopener noreferrer">
+{children}
+</a>
+),
+};
 
     return <ReactMarkdown components={components}>{markdown}</ReactMarkdown>;
+
 };
 
 export default MarkdownRenderer;
@@ -57,7 +98,7 @@ Explanation:
 Customizing Links:
 
 The components object allows you to specify how certain Markdown elements are rendered. For links (a), we provide a custom rendering function.
-The target="_blank" ensures the link opens in a new tab.
+The target="\_blank" ensures the link opens in a new tab.
 The rel="noopener noreferrer" improves security by preventing the new page from accessing the window.opener object and avoiding potential phishing attacks.
 Usage:
 
@@ -67,9 +108,8 @@ import React from "react";
 import MarkdownRenderer from "./MarkdownRenderer";
 
 const App = () => {
-    const markdownContent = `
-    [Open Google](https://www.google.com)
-    `;
+const markdownContent = `   [Open Google](https://www.google.com)
+  `;
 
     return (
         <div>
@@ -77,13 +117,14 @@ const App = () => {
             <MarkdownRenderer markdown={markdownContent} />
         </div>
     );
+
 };
 
 export default App;
 Now, any links in the markdown content will open in a new tab automatically.
 
-
 # TODO:
+
 great! sometimes when i change the theme on one themetoggler but not the other and then make the other appear (by resizing screen), theyre out of sync. how to keep my theme togglers synced up?
 ChatGPT said:
 ChatGPT
@@ -104,20 +145,21 @@ import Navbar from "./Navbar";
 import "./App.css"; // Your global styles
 
 const App = () => {
-  const [theme, setTheme] = useState("dark");
+const [theme, setTheme] = useState("dark");
 
-  const toggleTheme = () => {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    document.body.className = `${newTheme}-mode`;
-  };
+const toggleTheme = () => {
+const newTheme = theme === "dark" ? "light" : "dark";
+setTheme(newTheme);
+document.body.className = `${newTheme}-mode`;
+};
 
-  return (
-    <div>
-      <Navbar theme={theme} toggleTheme={toggleTheme} />
-      {/* Other components */}
-    </div>
-  );
+return (
+
+<div>
+<Navbar theme={theme} toggleTheme={toggleTheme} />
+{/_ Other components _/}
+</div>
+);
 };
 
 export default App;
@@ -135,17 +177,18 @@ import LevelSelector from "./LevelSelector";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = ({ theme, toggleTheme, level, setLevel }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prevState) => !prevState); // Toggle the state
-  };
+const toggleMenu = () => {
+setIsMenuOpen((prevState) => !prevState); // Toggle the state
+};
 
-  return (
-    <nav className="navbar">
-      <Link to="/" className="navbar-title">
-        learn-markdown-game
-      </Link>
+return (
+
+<nav className="navbar">
+<Link to="/" className="navbar-title">
+learn-markdown-game
+</Link>
 
       <LevelSelector level={level} setLevel={setLevel} />
 
@@ -165,7 +208,8 @@ const Navbar = ({ theme, toggleTheme, level, setLevel }) => {
         <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
       </div>
     </nav>
-  );
+
+);
 };
 
 export default Navbar;
@@ -179,15 +223,16 @@ import React from "react";
 import "./ThemeToggle.css";
 
 const ThemeToggle = ({ theme, toggleTheme }) => {
-  return (
-    <div className="theme-toggle" onClick={toggleTheme}>
-      {theme === "dark" ? (
-        <i className="fas fa-sun toggle-icon"></i>
-      ) : (
-        <i className="fas fa-moon toggle-icon"></i>
-      )}
-    </div>
-  );
+return (
+
+<div className="theme-toggle" onClick={toggleTheme}>
+{theme === "dark" ? (
+<i className="fas fa-sun toggle-icon"></i>
+) : (
+<i className="fas fa-moon toggle-icon"></i>
+)}
+</div>
+);
 };
 
 export default ThemeToggle;

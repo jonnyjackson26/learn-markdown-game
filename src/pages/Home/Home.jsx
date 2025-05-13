@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css";
 import Navbar from "../../components/Navbar/Navbar";
 import { useTheme } from "../../context/ThemeContext";
 import Editor from '../../components/Editor/Editor';
+import { useAnalytics } from "../../hooks/useAnalytics";
 
 const Home = () => {
   const { isDarkMode } = useTheme();
+  const { trackAction } = useAnalytics();
+
+  // Track when a user starts the game
+  const handlePlayClick = () => {
+    trackAction('start_game', { from_page: 'home' });
+  };
 
   return (
     <div className={`home-container`}>
@@ -50,7 +57,7 @@ You can even create:
 `}/>
       </div>
       <div className="centered-cta">
-        <Link to="/tutorial" className="cta-button">Play</Link>
+        <Link to="/tutorial" className="cta-button" onClick={handlePlayClick}>Play</Link>
       </div>
     </div>
   );

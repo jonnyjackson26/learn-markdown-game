@@ -11,6 +11,7 @@ import LiveEditor from './pages/LiveEditor/LiveEditor';
 import Documentation from './pages/About/Documentation/Documentation';
 import ReportABug from './pages/About/ReportABug/ReportABug';
 import Tutorial from './pages/Tutorial/Tutorial';
+import './firebase'; // Import Firebase configuration
 
 const router = createHashRouter([
   {

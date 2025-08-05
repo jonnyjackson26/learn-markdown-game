@@ -48,6 +48,24 @@ function MyComponent() {
 }
 ```
 
+## Tutorial Progress Tracking
+
+The application uses Firebase Analytics to track how users progress through the tutorial:
+
+- **Level completion** - Records when users complete each level and how long it took
+- **Milestone levels** - Tracks when users reach significant milestones (levels 1, 5, 10, etc.)
+- **Tutorial completion** - Records when users complete the entire tutorial
+- **Dropout analysis** - Helps identify which levels users struggle with or abandon
+
+This data helps improve the tutorial experience by showing:
+
+- How far users typically get in the tutorial
+- Which levels might be too difficult
+- How long users spend on each level
+- Overall completion rates
+
+For more details, see the [Firebase Analytics Implementation Guide](docs/FIREBASE_ANALYTICS.md).
+
 # Todo:
 
 add intro for level 0 in which we talk about what markdown is. the continue button should auto be blue
@@ -108,8 +126,8 @@ import React from "react";
 import MarkdownRenderer from "./MarkdownRenderer";
 
 const App = () => {
-const markdownContent = `   [Open Google](https://www.google.com)
-  `;
+const markdownContent = ` [Open Google](https://www.google.com)
+`;
 
     return (
         <div>

@@ -27,6 +27,64 @@ Firebase Analytics is used to track user interactions and page views in the appl
 2. **User Actions** - Tracked using the `trackAction` function
 3. **Custom Events** - Tracked using the `trackEvent` function
 
+## Tutorial Progress Tracking
+
+The application tracks user progress through the tutorial with the following events:
+
+### 1. Level Completion Events
+
+Each time a user completes a level, the following event is triggered:
+
+```javascript
+trackEvent("level_completed", {
+  level_number: level, // The level that was completed
+  level_name: level_info[level]?.title || `Level ${level}`, // Human-readable level name
+  time_spent: timeInSeconds, // Time spent on this level in seconds
+});
+```
+
+### 2. Milestone Level Events
+
+To track significant progress points, milestone events are triggered at specific levels (1, 5, 10, 15, etc.):
+
+```javascript
+trackEvent("milestone_level_reached", {
+  level_number: level,
+  total_levels: totalLevels,
+  progress_percentage: percentage, // Progress as a percentage
+});
+```
+
+### 3. Tutorial Completion Event
+
+When a user reaches the final level:
+
+```javascript
+trackEvent("tutorial_completed", {
+  time_to_complete: totalTimeInSeconds, // Total time from start to finish
+});
+```
+
+### 4. Analyzing Tutorial Funnel
+
+A sample query to analyze the tutorial funnel (which levels users drop off at):
+
+```sql
+SELECT
+  event_params.value.int_value AS level_number,
+  COUNT(DISTINCT user_pseudo_id) AS user_count
+FROM
+  `your-project-id.analytics_XXXXXX.events_*`,
+  UNNEST(event_params) AS event_params
+WHERE
+  event_name = 'level_completed'
+  AND event_params.key = 'level_number'
+GROUP BY
+  level_number
+ORDER BY
+  level_number ASC
+```
+
 ## Usage Examples
 
 ### Basic Usage with Hook
@@ -70,7 +128,9 @@ The following events are currently tracked in the application:
 1. **Page Views** - Every time a user navigates to a different page
 2. **Game Start** - When a user clicks the Play button on the home page
 3. **Level Completion** - When a user completes a level in the tutorial
-4. **Button Clicks** - Various button interactions throughout the application
+4. **Milestone Levels** - Key levels that indicate significant progress
+5. **Tutorial Completion** - When a user completes the entire tutorial
+6. **Button Clicks** - Various button interactions throughout the application
 
 ## Privacy Considerations
 

@@ -1,0 +1,90 @@
+/* Default light mode variables */
+:root {
+    --goal-bg: #f4f4f4;
+    --input-bg: #fff;
+    --preview-bg: #f9f9f9;
+    --border-color: #ddd;
+    --text-color: #333;
+    --code-background-color: #eef;
+    --font-family: 'Roboto', sans-serif; /* Default font */
+}
+
+/* Dark mode variables */
+body.dark-mode {
+    --goal-bg: #333;
+    --input-bg: #444;
+    --preview-bg: #555;
+    --border-color: #666;
+    --text-color: #fff;
+    --code-background-color:rgb(105, 105, 110);
+    --font-family: 'Roboto', sans-serif; /* Default font */
+}
+
+.home-page {
+    padding: 20px;
+    font-family: var(--font-family); /* Apply font family */
+}
+
+.markdown-section {
+    background-color: var(--goal-bg); /* Use the variable for preview background */
+    border: 1px solid var(--border-color); /* Use variable for border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside each section */
+    margin: 20px 0; /* Space between sections */
+}
+
+* Keyframes for gradient border animation */
+@keyframes gradientBorder {
+  0% {
+    border-color: #75d0ef;
+    box-shadow: 0 4px 15px rgba(117, 208, 239, 0.4);
+  }
+  25% {
+    border-color: #1818ec;
+    box-shadow: 0 4px 15px rgba(24, 24, 236, 0.4);
+  }
+  50% {
+    border-color: #4e85e8;
+    box-shadow: 0 4px 15px rgba(78, 133, 232, 0.4);
+  }
+  75% {
+    border-color: #1818ec;
+    box-shadow: 0 4px 15px rgba(24, 24, 236, 0.4);
+  }
+  100% {
+    border-color: #75d0ef;
+    box-shadow: 0 4px 15px rgba(117, 208, 239, 0.4);
+  }
+}
+
+/* Center the CTA button at the bottom of the page */
+.centered-cta {
+    position: fixed;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    pointer-events: auto;
+    width: auto;
+}
+
+/* Button styling with consistent colors across themes */
+.cta-button {
+    display: inline-block;
+    background-color: #0066cc; /* Fixed blue background */
+    color: white !important; /* Always white text */
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    border: 3px solid #75d0ef;
+    text-align: center;
+    animation: gradientBorder 8s ease infinite;
+}
+
+.cta-button:hover {
+    background-color: #0052a3; /* Darker blue on hover */
+    transform: translateY(-2px) scale(1.05);
+}

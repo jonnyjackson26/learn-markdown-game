@@ -12,6 +12,7 @@ import Documentation from './pages/About/Documentation/Documentation';
 import ReportABug from './pages/About/ReportABug/ReportABug';
 import Tutorial from './pages/Tutorial/Tutorial';
 import './firebase'; // Import Firebase configuration
+import Home2 from './pages/Home2/Home2';
 
 const router = createHashRouter([
   {
@@ -29,6 +30,10 @@ const router = createHashRouter([
   {
     path: "/cheat-sheet",
     element: <CheatSheet />,
+  },
+  {
+    path: "/home2",
+    element: <Home2 />,
   },
   {
     path: "/live-editor",

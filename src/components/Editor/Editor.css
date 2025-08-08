@@ -55,8 +55,9 @@ body.dark-mode {
     color: var(--text-color);
     white-space: pre-wrap;  /* ensures text wraps at newlines and long lines */
     word-wrap: break-word;  /* breaks long words if needed */
-    padding-right: 1rem;          /* adds padding on all sides */
+    padding-right: 1rem;          
     box-sizing: border-box; /* ensures padding doesn't overflow the container */
+    overflow: hidden;
 }
 
 .markdown-output {

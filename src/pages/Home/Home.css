@@ -1,43 +1,39 @@
-/* Ensure the body and html take up the full height */
-html, body {
-    height: 100%;
-    margin: 0;
-    transition: background-color 0.3s ease, color 0.3s ease;
+/* Default light mode variables */
+:root {
+    --goal-bg: #f4f4f4;
+    --input-bg: #fff;
+    --preview-bg: #f9f9f9;
+    --border-color: #ddd;
+    --text-color: #333;
+    --code-background-color: #eef;
+    --font-family: 'Roboto', sans-serif; /* Default font */
 }
 
-/* Home component styles */
-.home-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    font-family: var(--primary-font, 'Arial', sans-serif);
-    overflow: hidden; /* Prevent scrolling at container level */
+/* Dark mode variables */
+body.dark-mode {
+    --goal-bg: #333;
+    --input-bg: #444;
+    --preview-bg: #555;
+    --border-color: #666;
+    --text-color: #fff;
+    --code-background-color:rgb(105, 105, 110);
+    --font-family: 'Roboto', sans-serif; /* Default font */
 }
 
-/* Editor wrapper to take up full height/width */
-.editor-wrapper {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+.home-page {
+    padding: 20px;
+    font-family: var(--font-family); /* Apply font family */
 }
 
-/* Override Editor component styles to take full height */
-.editor-wrapper > div {
-    height: 100% !important;
-    width: 100% !important;
-    max-height: none !important;
+.markdown-section {
+    background-color: var(--goal-bg); /* Use the variable for preview background */
+    border: 1px solid var(--border-color); /* Use variable for border color */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Padding inside each section */
+    margin: 20px 0; /* Space between sections */
 }
 
-/* Allow scrolling within the editor panels */
-.markdown-editor, 
-.markdown-output {
-    overflow-y: auto !important;
-}
-
-/* Keyframes for gradient border animation */
+* Keyframes for gradient border animation */
 @keyframes gradientBorder {
   0% {
     border-color: #75d0ef;
@@ -91,114 +87,4 @@ html, body {
 .cta-button:hover {
     background-color: #0052a3; /* Darker blue on hover */
     transform: translateY(-2px) scale(1.05);
-}
-
-/* Remove theme-specific styling */
-body.dark-mode .cta-button {
-    /* No theme-specific overrides */
-}
-
-/* This is to intensify the italic */
-em:not(.not-extreeme-italics) {
-    font-family: serif;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .cta-button {
-        font-size: 1.2rem;
-        padding: 0.8rem 2rem;
-    }
-}
-
-/* Navbar and BottomBar should take their content size */
-.navbar {
-    flex: 0 0 auto;
-}
-
-.bottom-bar {
-    flex: 0 0 auto;
-}
-
-/* ProgressBar styles */
-.progress-bar-container {
-    flex: 0 0 auto;
-}
-
-/* MarkdownGame should take the remaining space */
-.markdown-game {
-    flex: 1;
-    overflow-y: auto;
-}
-
-:root {
-    --bg-color: #282c34;
-    --text-color: #ffffff;
-    --accent-color: #61dafb;
-}
-
-body.light-mode {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --accent-color: #007acc;
-}
-
-.welcome-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
-    padding: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.welcome-content {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.welcome-content h1 {
-    margin-bottom: 1.5rem;
-    font-size: 2.5rem;
-    color: #0066cc;
-}
-
-.dark-mode .welcome-content h1 {
-    color: #66b3ff;
-}
-
-.welcome-content p {
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
-    line-height: 1.5;
-}
-
-.welcome-content code {
-    background-color: rgba(0, 0, 0, 0.05);
-    padding: 0.2rem 0.4rem;
-    border-radius: 4px;
-    font-family: monospace;
-}
-
-.dark-mode .welcome-content code {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.cta-button-container {
-    margin-top: 2rem;
-}
-
-@media (max-width: 768px) {
-    .welcome-content h1 {
-        font-size: 2rem;
-    }
-    
-    .welcome-content p {
-        font-size: 1rem;
-    }
 }

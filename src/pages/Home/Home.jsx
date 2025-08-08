@@ -1,66 +1,35 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./Home.css";
-import Navbar from "../../components/Navbar/Navbar";
-import { useTheme } from "../../context/ThemeContext";
+import React from 'react';
+import { useEffect } from 'react';
+import './Home.css';
+import Navbar from '../../components/Navbar/Navbar';
 import Editor from '../../components/Editor/Editor';
+import { useTheme } from '../../context/ThemeContext';
+import { Link } from 'react-router-dom';
 import { useAnalytics } from "../../hooks/useAnalytics";
 
 const Home = () => {
-  const { isDarkMode } = useTheme();
-  const { trackAction } = useAnalytics();
+    const { isDarkMode } = useTheme();
+    const { trackAction } = useAnalytics();
 
-  // Track when a user starts the game
-  const handlePlayClick = () => {
-    trackAction('start_game', { from_page: 'home' });
-  };
+    const handlePlayClick = () => {
+        trackAction('start_game', { from_page: 'home' });
+      };
 
-  return (
-    <div className={`home-container`}>
-      <Navbar />
-      <div className="editor-wrapper">
-        <Editor prompt={`# 🚀 **Welcome to Learn Markdown Game!**
+    return (
+        <>
+            <Navbar /> {/* Include the Navbar */}
+            <div className="home-page">
+                {/* Task Lists */}
+                <section id="task-lists">
+                    <Editor prompt={`# Welcome to the _learn-markdown-game_. \n\n## What *is* Markdown? \n\nMarkdown is a lightweight markup language with a syntax similar to HTML. It is commonly used for formatting text in web pages and other documents, like GitHub README files. \n\nYou can easily *format* text ___with simple symbols___. It's ~~lightning fast~~ to write.  You can create [links](jonny-jackson.com), tables, images, and more.  \n\nClick the ***Play*** button to start the game.`}/>
+                </section>
 
-## *Transform plain text into beautifully formatted content*
-
-Here's why **Markdown** is _amazing_:
-
-1. **Simple syntax** that's easy to remember
-2. **Lightning fast** way to format text without taking your hands off the keyboard
-3. **Universal support** across platforms, from GitHub to Reddit
-
----
-
-### ✨ Look what you can do with Markdown:
-
-| Feature | Example | Result |
-|---------|---------|--------|
-| Headings | # Heading | <h1>Heading</h1> |
-| Emphasis | **Bold** and *Italic* | **Bold** and *Italic* |
-| Lists | - Item 1\\n- Item 2 | • Item 1<br>• Item 2 |
-
-> "Markdown is like a secret superpower for creating beautiful documents with minimal effort."
-
-Want to share code? No problem!
-\`\`\`javascript
-function hello() {
-  console.log("Markdown is awesome!");
-}
-\`\`\`
-
-You can even create:
-- [x] Task lists
-- [x] [Links to anything](https://example.com)
-- [x] Images: ![Markdown Logo](https://markdown-here.com/img/icon256.png)
-
-### 🎮 Ready to master Markdown through play?
-`}/>
-      </div>
-      <div className="centered-cta">
-        <Link to="/tutorial" className="cta-button" onClick={handlePlayClick}>Play</Link>
-      </div>
-    </div>
-  );
+                <div className="centered-cta">
+                    <Link to="/tutorial" className="cta-button" onClick={handlePlayClick}>Play</Link>
+                </div>
+            </div>
+        </>
+    );
 };
 
 export default Home;

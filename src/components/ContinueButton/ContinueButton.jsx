@@ -68,9 +68,9 @@ const ContinueButton = ({ markdown, level, setLevel, setMarkdown }) => {
   return (
     <button
       className={`floating-continue-button ${
-        isValidMarkdown(markdown, level_info, level) || level === 0 ? "valid" : "invalid"
-      } ${level === 0 ? "enabled" : ""}`} // Add an extra "enabled" class when level is 0
-      disabled={level !== 0 && !isValidMarkdown(markdown, level_info, level)} // Disable unless level is 0 and markdown is valid
+        isValidMarkdown(markdown, level_info, level) ? "valid" : "invalid"
+      }`}
+      disabled={!isValidMarkdown(markdown, level_info, level)}
       onClick={handleContinue}
       style={{ bottom: `${adjustedBottom}px` }} // Dynamically adjust bottom position
     >

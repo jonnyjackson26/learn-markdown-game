@@ -21,7 +21,7 @@ const Home = () => {
             <div className="home-page">
                 {/* Task Lists */}
                 <section id="task-lists">
-                    <Editor prompt={`# Welcome to the _learn-markdown-game_. \n\n## What *is* Markdown? \n\nMarkdown is a lightweight markup language with a syntax similar to HTML. It is commonly used for formatting text in web pages and other documents, like GitHub README files. \n\nYou can easily *format* text ___with simple symbols___. It's ~~lightning fast~~ to write.  You can create [links](jonny-jackson.com), tables, images, and more.  \n\nClick the ***Play*** button to start the game.`}/>
+                    <Editor prompt={`# Welcome to the _learn-markdown-game_. \n\n## What *is* Markdown? \n\nMarkdown is a lightweight markup language with a syntax similar to HTML. It is commonly used for formatting text in web pages and other documents, like GitHub README files. \n\nYou can easily *format* text ___with simple symbols___. It's ~~lightning fast~~ to write.  You can create [links](https://jonny-jackson.com), tables, images, and more.  \n\nClick the ***Play*** button to start the game.`}/>
                 </section>
 
                 <div className="centered-cta">

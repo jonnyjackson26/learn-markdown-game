@@ -4,7 +4,7 @@
   justify-content: center;
   width: 40px; /* Define width */
   height: 40px; /* Define height */
-  background-color: var(--accent-color);
+  background-color: var(--navbar-accent);
   color: #ffffff; /* White icon in light mode */
   border-radius: 50%; /* Ensure it's a circle */
   cursor: pointer;

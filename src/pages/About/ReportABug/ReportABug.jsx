@@ -11,7 +11,6 @@ const ReportABug = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        // Replace with your EmailJS credentials
         const serviceID = 'learn-markdown-game-serv';
         const templateID = 'learn-markdown-game-tmpl';
         const publicKey = 'RvRZJ8_KLtjGvgQgy';

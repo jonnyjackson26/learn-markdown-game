@@ -13,7 +13,8 @@ const About = () => {
                     Welcome to the Markdown Learning Game! This free resource was created by 
                     me, Jonny Jackson, to help you learn Markdown in an interactive way. 
                     You can find more about me at my personal website: 
-                    <a href="https://jonny-jackson.com" target="_blank" rel="noopener noreferrer"> jonny-jackson.com</a>.
+                    <a href="https://jonny-jackson.com" target="_blank" rel="noopener noreferrer"> jonny-jackson.com</a>, or view the source code on  
+                    <a href="https://github.com/jonnyjackson26/learn-markdown-game" target="_blank" rel="noopener noreferrer"> Github</a>.
                 </p>
                 <p>
                     When I started learning markdown in college, I noticed there were plenty of videos I'd watch on YouTube but nothing stuck with me until I started writing my own. I've always belived that its much better to learn by <em class="not-extreeme-italics">doing</em> rather than by <em class="not-extreeme-italics">watching,</em> so I created this site. 

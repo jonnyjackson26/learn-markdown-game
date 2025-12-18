@@ -1,10 +1,12 @@
 # Learn-Markdown-Game
 ---
+![Learn Markdown Game](public/learn-markdown-game.png)
+
 [***learn-markdown-game.com***](https://learn-markdown-game.com) is an interactive, level-based game tutorial to go from the absolute basics to master of the markdown language.
 
 Markdown is a lightweight markup language with a syntax similar to HTML. It is commonly used for formatting text in web pages and other documents, like GitHub README files.
 
-When I started learning markdown in college, I noticed there were plenty of videos I'd watch on YouTube but nothing stuck with me until I started writing markdown on my own. I've always belived that its much better to learn by *doing* rather than by *watching*, so I created this site.
+When I started learning markdown in college (Oct 2024), I noticed there were plenty of videos I'd watch on YouTube but nothing stuck with me until I started writing markdown on my own. I've always belived that its much better to learn by *doing* rather than by *watching*, so I created this site. You can learn more on [my website.](https://jonny-jackson.com/posts/learn-markdown-game/)
 
 This website uses react-markdown, which uses the Github flavor of markdown. 
 

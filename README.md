@@ -26,7 +26,7 @@ firebase login
 firebase deploy
 ```
 
-This project uses Firebase Analytics to track user interactions. The .env file is not neccessary, and only is used to send basic analytic data to my Firebase Analytics. This data helps improve the tutorial experience by showing How far users typically get in the tutorial, Which levels might be too difficult, How long users spend on each level, Overall completion rates.
+This project uses Firebase Analytics to track user interactions. The .env file is not neccessary, and only is used to send basic analytic data to my Firebase Analytics. This data helps improve the tutorial experience by showing how far users typically get in the tutorial, which levels might be too difficult, how long users spend on each level, and overall completion rates.
 
 I use emailjs to report bugs.
 

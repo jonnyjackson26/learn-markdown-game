@@ -21,6 +21,8 @@ npm run dev
 **To deploy:**
 ```
 npm run build
+npm i -g firebase-tools
+firebase login
 firebase deploy
 ```
 
@@ -34,7 +36,6 @@ All level data is stored in `src/assets/level_info.jsx`. If you want to add/chan
 
 ### TODO:
  - make panels resizable
- - right now the only event sent to my analytics is "level_completed", but I wish it was an event for each level.
  - make certificate
  - make gifs (https://online-video-cutter.com/crop-video), (https://ezgif.com/video-to-gif) 
  - have a challenges page where you edit plain text to make it look like a styled md doc

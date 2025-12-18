@@ -102,6 +102,10 @@ body.dark-mode {
 
 /* Responsive Styles for Mobile */
 @media (max-width: 768px) {
+  .navbar-title {
+    font-size: 14px;
+  }
+
   .navbar-right {
     display: none; /* Hide the navbar items on mobile */
   }

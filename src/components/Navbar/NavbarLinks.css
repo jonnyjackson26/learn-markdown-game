@@ -19,6 +19,12 @@
   color: var(--accent-color);
 }
 
+.navbar-links a.active {
+  text-decoration: underline;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
 @media (max-width: 768px) {
   .navbar-links a {
     display: block; /* Stack the links vertically on smaller screens */

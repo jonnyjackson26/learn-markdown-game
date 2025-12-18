@@ -38,7 +38,7 @@ const About = () => {
                 </p>*/}
                 <p>
                     Visit our <Link to="/documentation">Documentation</Link> for more detailed information, 
-                    or <Link to="/report-a-bug">Report a Bug</Link> if you encounter any issues.
+                    or <Link to="/report-a-bug">Report a Bug</Link>/<a href="https://github.com/jonnyjackson26/learn-markdown-game/issues" target="_blank" rel="noopener noreferrer">Open Github issue</a> if you encounter any unexpected behavior.
                 </p>
             </div>
         </>
